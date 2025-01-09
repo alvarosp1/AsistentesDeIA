@@ -1,0 +1,72 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Asistentes de IA para potenciar tu empresa" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+
+		<!-- Chatbot Integration -->
+		<script is:inline>
+			window.difyChatbotConfig = {
+				token: 'o5fRmx9lF0yIHs5o'
+			}
+		</script>
+		<script
+			src="https://udify.app/embed.min.js"
+			id="o5fRmx9lF0yIHs5o"
+			defer>
+		</script>
+		<style is:inline>
+			#dify-chatbot-bubble-button {
+				background: linear-gradient(to right, rgb(99, 102, 241), rgb(79, 70, 229)) !important;
+				box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.3) !important;
+				transition: all 0.2s ease !important;
+			}
+			#dify-chatbot-bubble-button:hover {
+				transform: translateY(-2px) !important;
+				box-shadow: 0 15px 20px -3px rgba(99, 102, 241, 0.4) !important;
+			}
+			#dify-chatbot-bubble-window {
+				width: 24rem !important;
+				height: 40rem !important;
+				border-radius: 1rem !important;
+				box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+			}
+		</style>
+	</head>
+	<body class="bg-gray-900">
+		<slot />
+		<!-- Calendly Integration -->
+		<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+	</body>
+</html>
+
+<style is:global>
+	:root {
+		--accent: 136, 58, 234;
+		--accent-light: 224, 204, 250;
+		--accent-dark: 49, 10, 101;
+		--accent-gradient: linear-gradient(
+			45deg,
+			rgb(var(--accent)),
+			rgb(var(--accent-light)) 30%,
+			white 60%
+		);
+	}
+	html {
+		font-family: system-ui, sans-serif;
+		background: #13151a;
+		background-size: 224px;
+	}
+</style>
