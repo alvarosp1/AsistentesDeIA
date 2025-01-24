@@ -21,10 +21,16 @@ jobs:
         uses: actions/checkout@v3
       - name: Install, build, and upload your site
         uses: withastro/action@v1
-        # with:
-            # path: . # The root location of your Astro project inside the repository. (optional)
-            # node-version: 18 # The specific version of Node that should be used to build your site. Defaults to 18. (optional)
-            # package-manager: pnpm # The Node package manager that should be used to install dependencies and build your site. Automatically detected based on your lockfile. (optional)
+        with:
+          path: ./ai-agency-website
+      - name: Create CNAME file
+        run: |
+          mkdir -p ./ai-agency-website/dist
+          echo "asistentesdeia.cl" > ./ai-agency-website/dist/CNAME
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./ai-agency-website/dist
 
   deploy:
     needs: build
