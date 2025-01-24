@@ -21,16 +21,14 @@ jobs:
         uses: actions/checkout@v3
       - name: Install, build, and upload your site
         uses: withastro/action@v1
-        with:
-          path: ./ai-agency-website
       - name: Create CNAME file
         run: |
-          mkdir -p ./ai-agency-website/dist
-          echo "asistentesdeia.cl" > ./ai-agency-website/dist/CNAME
+          mkdir -p ./dist
+          echo "asistentesdeia.cl" > ./dist/CNAME
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./ai-agency-website/dist
+          path: ./dist
 
   deploy:
     needs: build
