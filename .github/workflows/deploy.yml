@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Build and Deploy to GitHub Pages
 
 on:
   # Trigger the workflow every time you push to the `main` branch
@@ -20,13 +20,11 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          persist-credentials: false
 
       - name: Setup Node
         uses: actions/setup-node@v2
@@ -39,21 +37,21 @@ jobs:
       - name: Build
         run: npm run build
         
-      - name: Prepare files for deployment
+      - name: Move build to docs directory
         run: |
-          # Ensure dist directory exists
-          mkdir -p ./dist
+          # Create docs directory
+          mkdir -p docs
+          # Copy all files from dist to docs
+          cp -r dist/* docs/
           # Create .nojekyll file to bypass Jekyll processing
-          touch ./dist/.nojekyll
+          touch docs/.nojekyll
           # Create CNAME file
-          echo "asistentesdeia.cl" > ./dist/CNAME
-          # Ensure all files are readable
-          chmod -R +r ./dist
+          echo "asistentesdeia.cl" > docs/CNAME
           
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: dist
-          branch: gh-pages
-          clean: true
-          single-commit: true
+      - name: Commit and Push
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add docs -f
+          git commit -m "Deploy site to GitHub Pages"
+          git push
