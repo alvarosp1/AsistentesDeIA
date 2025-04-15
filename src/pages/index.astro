@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TopBar from '../components/react/TopBar';
+import Navbar from '../components/react/Navbar';
+import Hero from '../components/react/Hero';
+import Benefits from '../components/react/Benefits';
+import Services from '../components/react/Services';
+import Industries from '../components/react/Industries';
+import LiveDemo from '../components/LiveDemo';
+import Pricing from '../components/react/Pricing';
+import SuccessStories from '../components/react/SuccessStories';
+import Footer from '../components/react/Footer';
+---
+
+<Layout title="Asistentes de IA - Automatización Inteligente para tu Empresa">
+	<TopBar client:load />
+	<Navbar client:load />
+	<main>
+		<Hero client:load />
+		<LiveDemo client:load />
+		<Benefits client:visible />
+		<Services client:visible />
+		<Industries client:visible />
+		<Pricing client:visible />
+		<SuccessStories client:visible />
+	</main>
+	<Footer client:visible />
+</Layout>
