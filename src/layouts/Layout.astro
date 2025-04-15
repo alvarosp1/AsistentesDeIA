@@ -17,8 +17,8 @@ const { title } = Astro.props;
 		<title>{title}</title>
 
 		<!-- Botpress Integration -->
-		<script src="https://cdn.botpress.cloud/webchat/v2.3/inject.js"></script>
-		<script src="https://files.bpcontent.cloud/2025/04/14/21/20250414214824-P10XAEM5.js"></script>
+		<script is:inline src="https://cdn.botpress.cloud/webchat/v2.3/inject.js"></script>
+		<script is:inline src="https://files.bpcontent.cloud/2025/04/14/21/20250414214824-P10XAEM5.js"></script>
 	</head>
 	<body class="bg-gray-900">
 		<slot />
