@@ -20,13 +20,14 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
         with:
-          fetch-depth: 0
-      
+          persist-credentials: false
+
       - name: Setup Node
         uses: actions/setup-node@v2
         with:
@@ -38,18 +39,21 @@ jobs:
       - name: Build
         run: npm run build
         
-      - name: Create CNAME and nojekyll files
+      - name: Prepare files for deployment
         run: |
-          echo "asistentesdeia.cl" > ./dist/CNAME
+          # Ensure dist directory exists
+          mkdir -p ./dist
+          # Create .nojekyll file to bypass Jekyll processing
           touch ./dist/.nojekyll
+          # Create CNAME file
+          echo "asistentesdeia.cl" > ./dist/CNAME
+          # Ensure all files are readable
+          chmod -R +r ./dist
           
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          cname: asistentesdeia.cl
-          force_orphan: true
-          user_name: 'github-actions[bot]'
-          user_email: 'github-actions[bot]@users.noreply.github.com'
-          commit_message: 'Deploy to GitHub Pages'
+          folder: dist
+          branch: gh-pages
+          clean: true
+          single-commit: true
