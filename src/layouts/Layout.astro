@@ -15,28 +15,28 @@ const { title } = Astro.props;
 		<link rel="icon" type="image/png" href="/favicon.png" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+
+		<!-- Botpress Integration -->
+		<script is:inline define:vars={{ botpressToken: "P10XAEM5" }}>
+			window.addEventListener('DOMContentLoaded', (event) => {
+				// Load Botpress scripts
+				const script1 = document.createElement('script');
+				script1.src = "https://cdn.botpress.cloud/webchat/v2.3/inject.js";
+				document.head.appendChild(script1);
+
+				// Once the first script is loaded, load the second script
+				script1.onload = () => {
+					const script2 = document.createElement('script');
+					script2.src = `https://files.bpcontent.cloud/2025/04/14/21/20250414214824-${botpressToken}.js`;
+					document.head.appendChild(script2);
+				};
+			});
+		</script>
 	</head>
 	<body class="bg-gray-900">
 		<slot />
 		<!-- Calendly Integration -->
 		<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
-		
-		<!-- Botpress Integration -->
-		<script is:inline>
-			window.botpressWebChat = {
-				init: {
-					botId: 'P10XAEM5',
-					hostUrl: 'https://cdn.botpress.cloud/webchat/v2.3',
-					messagingUrl: 'https://messaging.botpress.cloud',
-					clientId: 'P10XAEM5',
-				}
-			};
-		</script>
-		<script 
-			src="https://cdn.botpress.cloud/webchat/v2.3/inject.js" 
-			async
-			is:inline
-		></script>
 	</body>
 </html>
 
