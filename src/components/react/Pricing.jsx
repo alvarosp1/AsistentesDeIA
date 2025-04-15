@@ -8,25 +8,19 @@ const plans = [
     description: "Ideal para pequeñas empresas que están comenzando",
     features: [
       { 
-        text: "1 Asistente Virtual", 
-        included: true,
-        hasInfo: true,
-        tooltip: `Con 1 Asistente Virtual podrás:
-
-• Gestionar un área específica (ventas, atención al cliente o soporte)
-• Hasta 3.000 mensajes/mes
-• Hasta 50 usuarios simultáneos
-• Tiempo de respuesta < 2 segundos`
+        text: "1 Asistente Virtual con hasta 3.000 mensajes/mes", 
+        included: true
       },
-      { text: "WhatsApp + Web + Facebook", included: true },
+      { text: "Hasta 50 usuarios simultáneos", included: true },
+      { text: "LLM avanzado (GPT-4 o superior)", included: true },
+      { text: "Tiempo de respuesta < 2 segundos", included: true },
+      { text: "Integración omnicanal", included: true },
+      { text: "Soporte multilingüe", included: true },
       { text: "Base de conocimiento (100 pág.)", included: true },
       { text: "Dashboard básico de métricas", included: true },
       { text: "Flujos personalizables", included: true },
-      { text: "Aprendizaje mensual", included: true },
-      { text: "Soporte por Email", included: true },
-      { text: "Capacitación inicial (2h)", included: true },
-      { text: "Análisis de sentimientos", included: false },
-      { text: "Integración con CRM", included: false },
+      { text: "2 tickets de soporte al mes", included: true },
+      { text: "Integraciones básicas (CRM, hojas de cálculo)", included: true },
     ],
     popular: false,
     gradient: "from-blue-500 to-cyan-500"
@@ -37,26 +31,20 @@ const plans = [
     description: "Para empresas en crecimiento que necesitan más funcionalidades",
     features: [
       { 
-        text: "3 Asistentes Virtuales", 
-        included: true,
-        hasInfo: true,
-        tooltip: `Con 3 Asistentes Virtuales especializados:
-
-• Gestiona múltiples áreas (ventas, soporte, marketing)
-• Hasta 15.000 mensajes/mes
-• Hasta 200 usuarios simultáneos
-• Tiempo de respuesta < 1 segundo
-• Integraciones con CRM y calendarios`
+        text: "3 Asistentes Virtuales con hasta 15.000 mensajes/mes", 
+        included: true
       },
-      { text: "WhatsApp + Web + Email + RRSS", included: true },
+      { text: "Hasta 200 usuarios simultáneos", included: true },
+      { text: "LLM avanzado (GPT-4 o superior)", included: true },
+      { text: "Tiempo de respuesta < 1 segundo", included: true },
+      { text: "Integración omnicanal", included: true },
+      { text: "Soporte multilingüe", included: true },
       { text: "Base de conocimiento (500 pág.)", included: true },
       { text: "Dashboard en tiempo real", included: true },
       { text: "Análisis de sentimientos", included: true },
-      { text: "Aprendizaje quincenal", included: true },
+      { text: "5 tickets de soporte al mes", included: true },
+      { text: "Integraciones avanzadas (CRM, HubSpot, Bitrix24)", included: true },
       { text: "Gestor de cuenta asignado", included: true },
-      { text: "Capacitación completa (5h)", included: true },
-      { text: "Integración con CRM", included: true },
-      { text: "Autenticación de dos factores", included: true },
     ],
     popular: true,
     gradient: "from-purple-500 to-indigo-500"
@@ -67,27 +55,25 @@ const plans = [
     description: "Solución completa para grandes empresas con necesidades específicas",
     features: [
       { 
-        text: "Asistentes Ilimitados", 
-        included: true,
-        hasInfo: true,
-        tooltip: `Con Asistentes Virtuales Ilimitados:
-
-• Gestiona todas las áreas de tu empresa
-• Mensajes ilimitados
-• Usuarios simultáneos ilimitados
-• Tiempo de respuesta < 0.5 segundos
-• Disponibilidad garantizada 99.9%
-• Integraciones empresariales completas`
+        text: "Asistentes Virtuales Ilimitados", 
+        included: true
       },
-      { text: "Integración omnicanal completa", included: true },
-      { text: "IA avanzada (GPT-4 o superior)", included: true },
-      { text: "Multilingüe (ES, EN, PT, etc.)", included: true },
+      { text: "Usuarios simultáneos ilimitados", included: true },
+      { text: "LLM avanzado (GPT-4 o superior)", included: true },
+      { text: "Mensajes ilimitados", included: true }, 
+      { text: "Tiempo de respuesta < 0.5 segundos", included: true },
+      { text: "Integración omnicanal", included: true },
+      { text: "Soporte multilingüe", included: true },
+      { text: "Agent Swarm (enjambre de agentes cooperativos)", included: true,
+        hasInfo: true,
+        tooltip: `Agent Swarm permite que múltiples asistentes de IA trabajen juntos, cada uno especializado en un área, comunicándose entre sí para resolver problemas complejos de manera colaborativa, como un equipo de expertos humanos.`
+      },
       { text: "Business Intelligence completo", included: true },
       { text: "Desarrollo a medida", included: true },
-      { text: "Soporte 24/7 prioritario", included: true },
+      { text: "10 tickets de soporte prioritario al mes", included: true },
+      { text: "Integraciones empresariales completas", included: true },
       { text: "Equipo técnico dedicado", included: true },
       { text: "API personalizada", included: true },
-      { text: "Auditorías de seguridad mensuales", included: true },
     ],
     popular: false,
     gradient: "from-rose-500 to-pink-500"
