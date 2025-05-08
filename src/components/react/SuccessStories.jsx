@@ -35,40 +35,6 @@ const cases = [
     description: "MulticolorInk.com es un e-commerce especializado en la venta de suministros para tatuajes y arte corporal. La empresa necesitaba una solución omnicanal para atender a sus clientes a través de múltiples plataformas, así como análisis en tiempo real de su operación.",
     solution: "Desarrollamos un sistema integrado de asistentes personales y de proceso: un asistente conversacional para atención omnicanal (llamadas, WhatsApp y chat del e-commerce) y un asistente analítico para monitoreo y análisis del negocio en tiempo real.",
     results: "MulticolorInk ha logrado reducir su tiempo de respuesta en un 92%, aumentar la satisfacción del cliente en un 65% y, como resultado, incrementar sus ventas en un 48% en los primeros seis meses."
-  },
-  {
-    company: "TechnoMart",
-    industry: "E-commerce",
-    logo: "https://placehold.co/200x80/2a2a2a/6d28d9?text=TechnoMart&font=montserrat",
-    metrics: {
-      satisfaction: "+45%",
-      response: "-85%",
-      sales: "+32%"
-    },
-    quote: "Los asistentes de IA transformaron nuestra atención al cliente. Ahora respondemos consultas en segundos y nuestras ventas han aumentado significativamente.",
-    author: "Carolina Pérez",
-    position: "Gerente de Operaciones",
-    image: null,
-    description: "TechnoMart es un marketplace de productos tecnológicos que enfrentaba desafíos con la atención al cliente y la gestión de consultas técnicas sobre sus productos.",
-    solution: "Implementamos un asistente conversacional con conocimiento técnico especializado, capaz de responder consultas detalladas sobre especificaciones de productos y compatibilidad.",
-    results: "La satisfacción del cliente aumentó un 45%, el tiempo de respuesta se redujo en un 85% y las ventas crecieron un 32% gracias a la mejor experiencia de compra."
-  },
-  {
-    company: "HealthCare Plus",
-    industry: "Salud",
-    logo: "https://placehold.co/200x80/2a2a2a/6d28d9?text=HealthCare+Plus&font=montserrat",
-    metrics: {
-      appointments: "+60%",
-      efficiency: "+75%",
-      satisfaction: "+40%"
-    },
-    quote: "La automatización de agendamiento y seguimiento de pacientes nos permitió enfocarnos en lo más importante: la atención médica.",
-    author: "Dr. Andrés Soto",
-    position: "Director Médico",
-    image: null,
-    description: "HealthCare Plus es una red de clínicas que buscaba optimizar sus procesos de agendamiento y seguimiento de pacientes para mejorar la experiencia de atención.",
-    solution: "Desarrollamos un asistente de proceso que automatiza la gestión de citas, envía recordatorios personalizados y facilita el seguimiento post-consulta de los pacientes.",
-    results: "El número de citas agendadas aumentó un 60%, la eficiencia operativa mejoró un 75% y la satisfacción de los pacientes creció un 40%."
   }
 ];
 

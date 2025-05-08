@@ -45,155 +45,73 @@ const pricingFaqs = [
 
 const plans = [
   {
-    name: "Startup",
-    subtitle: "Para empresas emergentes",
-    icon: (
-      <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M13 7L11.8845 4.76892C11.5634 4.1268 11.4029 3.80573 11.1634 3.57116C10.9516 3.36373 10.6963 3.20597 10.4161 3.10931C10.0992 3 9.74021 3 9.02229 3H5.2C4.0799 3 3.51984 3 3.09202 3.21799C2.71569 3.40973 2.40973 3.71569 2.21799 4.09202C2 4.51984 2 5.0799 2 6.2V7M2 7H17.2C18.8802 7 19.7202 7 20.362 7.32698C20.9265 7.6146 21.3854 8.07354 21.673 8.63803C22 9.27976 22 10.1198 22 11.8V16.2C22 17.8802 22 18.7202 21.673 19.362C21.3854 19.9265 20.9265 20.3854 20.362 20.673C19.7202 21 18.8802 21 17.2 21H6.8C5.11984 21 4.27976 21 3.63803 20.673C3.07354 20.3854 2.6146 19.9265 2.32698 19.362C2 18.7202 2 17.8802 2 16.2V7Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-      </svg>
-    ),
-    description: "Solución ideal para startups y pequeñas empresas que buscan su primera implementación de IA",
+    name: "AI Navigator",
+    subtitle: "Estrategia e Implementación de IA",
+    description: "Planificación estratégica y consultoría para implementar IA en tu empresa",
+    commitment: "*3 meses de compromiso mínimo",
     features: [
       {
-        category: "Capacidades",
         items: [
-          { text: "1 Asistente Virtual personalizado", included: true },
-          { text: "Hasta 5.000 mensajes/mes", included: true },
-          { text: "Hasta 50 usuarios simultáneos", included: true },
-          { text: "LLM avanzado (GPT-4 o superior)", included: true },
-          { text: "Tiempo de respuesta < 2 segundos", included: true },
-        ]
-      },
-      {
-        category: "Funcionalidades",
-        items: [
-          { text: "Integración con WhatsApp y Web", included: true },
-          { text: "Soporte multilingüe (español e inglés)", included: true },
-          { text: "Base de conocimiento (hasta 200 páginas)", included: true },
-          { text: "Dashboard básico de métricas", included: true },
-          { text: "Flujos conversacionales personalizables", included: true },
-        ]
-      },
-      {
-        category: "Soporte",
-        items: [
-          { text: "Implementación guiada", included: true },
-          { text: "2 tickets de soporte al mes", included: true },
-          { text: "Actualizaciones de modelo incluidas", included: true },
-          { text: "Capacitación inicial (2 horas)", included: true },
-          { text: "Integraciones básicas (CRM, hojas de cálculo)", included: true },
+          { text: "Evaluación de Preparación para IA", included: true },
+          { text: "Plan Completo de IA a 90 días", included: true },
+          { text: "20+ Horas de Consultoría Mensual", included: true },
+          { text: "Identificación de ROI Mínimo 3.7x", included: true },
+          { text: "Talleres de Estrategia de IA para Directivos", included: true },
+          { text: "Planificación de Integración de IA en toda la Empresa", included: true },
+          { text: "Evaluación de Habilidades de IA en la Empresa", included: true },
         ]
       }
     ],
     popular: false,
-    gradient: "from-blue-600 to-cyan-600",
-    bgGradient: "from-blue-600/10 to-cyan-600/10",
-    borderGradient: "border-blue-500/30",
-    buttonText: "Agendar Consulta",
-    callToAction: "Ideal para empresas con hasta 20 empleados"
+    gradient: "from-purple-600 to-indigo-600",
+    bgGradient: "from-purple-600/10 to-indigo-600/10",
+    borderGradient: "border-purple-500/30",
+    buttonText: "Contactar",
+    callToAction: "Ideal para empresas que inician su transformación con IA"
   },
   {
-    name: "Business",
-    subtitle: "Para empresas en crecimiento",
-    icon: (
-      <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M18 10L14 14M14 10L18 14M4 16.8002V7.2002C4 6.08009 4 5.51962 4.21799 5.0918C4.40973 4.71547 4.71547 4.40973 5.0918 4.21799C5.51962 4 6.08009 4 7.2002 4H16.8002C17.9203 4 18.4796 4 18.9074 4.21799C19.2837 4.40973 19.5905 4.71547 19.7822 5.0918C20.0002 5.51962 20.0002 6.07967 20.0002 7.19978V16.7998C20.0002 17.9199 20.0002 18.48 19.7822 18.9078C19.5905 19.2841 19.2837 19.5905 18.9074 19.7822C18.48 20 17.9203 20 16.8002 20H7.2002C6.08009 20 5.51962 20 5.0918 19.7822C4.71547 19.5905 4.40973 19.2841 4.21799 18.9078C4 18.48 4 17.9203 4 16.8002Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M9 12L4 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M12 16H4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M9 8L4 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-      </svg>
-    ),
-    description: "Solución completa para empresas medianas que buscan escalar su implementación de IA",
+    name: "AI Integrator",
+    subtitle: "Tu Equipo Fraccional de Implementación de IA",
+    description: "Equipo completo para implementar, desarrollar y optimizar soluciones de IA",
+    commitment: "*6 y 12 meses de compromiso",
     features: [
       {
-        category: "Capacidades",
         items: [
-          { text: "3 Asistentes Virtuales personalizados", included: true },
-          { text: "Hasta 20.000 mensajes/mes", included: true },
-          { text: "Hasta 200 usuarios simultáneos", included: true },
-          { text: "LLM avanzado (GPT-4 o superior)", included: true },
-          { text: "Tiempo de respuesta < 1 segundo", included: true },
-        ]
-      },
-      {
-        category: "Funcionalidades",
-        items: [
-          { text: "Integración omnicanal completa", included: true },
-          { text: "Soporte multilingüe (todos los idiomas)", included: true },
-          { text: "Base de conocimiento (hasta 1.000 páginas)", included: true },
-          { text: "Dashboard en tiempo real avanzado", included: true },
-          { text: "Análisis de sentimientos y tendencias", included: true },
-        ]
-      },
-      {
-        category: "Soporte",
-        items: [
-          { text: "Implementación prioritaria", included: true },
-          { text: "5 tickets de soporte al mes", included: true },
-          { text: "Actualizaciones de modelo prioritarias", included: true },
-          { text: "Capacitación completa (8 horas)", included: true },
-          { text: "Integraciones avanzadas (CRM, HubSpot, Bitrix24)", included: true },
-          { text: "Gestor de cuenta asignado", included: true },
+          { text: "Todo lo incluido en AI Navigator, más:", included: true },
+          { text: "40+ Horas de Desarrollo Mensual", included: true },
+          { text: "Talleres Educativos de IA Personalizados", included: true },
+          { text: "Gestión de Implementación de IA", included: true },
+          { text: "Soporte Crítico 24/7", included: true },
+          { text: "Sesiones Semanales de Estrategia y Actualizaciones", included: true },
+          { text: "Estructura de Riesgo y Cumplimiento", included: true },
+          { text: "Equipo de IA, Fracción del Costo", included: true },
         ]
       }
     ],
     popular: true,
-    gradient: "from-purple-600 to-indigo-600",
-    bgGradient: "from-purple-600/10 to-indigo-600/10",
-    borderGradient: "border-purple-500/30",
-    buttonText: "Agendar Consulta",
-    callToAction: "Ideal para empresas con 20-200 empleados"
+    gradient: "from-indigo-600 to-blue-600",
+    bgGradient: "from-indigo-600/10 to-blue-600/10",
+    borderGradient: "border-indigo-500/30",
+    buttonText: "Contactar",
+    callToAction: "Ideal para empresas que buscan implementación completa"
   },
   {
-    name: "Enterprise",
-    subtitle: "Para grandes organizaciones",
-    icon: (
-      <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M3.33789 17V7C3.33789 5.89543 4.23332 5 5.33789 5H18.6621C19.7667 5 20.6621 5.89543 20.6621 7V17C20.6621 18.1046 19.7667 19 18.6621 19H5.33789C4.23332 19 3.33789 18.1046 3.33789 17Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M3.33789 8H20.6621" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M7.33789 12L9.33789 14L13.3379 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M16.6621 12H16.6721" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M16.6621 15H16.6721" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-      </svg>
-    ),
-    description: "Solución a medida para grandes empresas con necesidades complejas y específicas",
+    name: "AI Enterprise",
+    subtitle: "Soluciones Empresariales a Medida",
+    description: "Transformación digital completa con IA para grandes organizaciones",
+    commitment: "*Contratos personalizados",
     features: [
       {
-        category: "Capacidades",
         items: [
-          { text: "Asistentes Virtuales Ilimitados", included: true },
-          { text: "Mensajes ilimitados", included: true },
-          { text: "Usuarios simultáneos ilimitados", included: true },
-          { text: "LLM avanzado (GPT-4 o superior)", included: true },
-          { text: "Tiempo de respuesta < 0.5 segundos", included: true },
-          { text: "Infraestructura dedicada", included: true },
-        ]
-      },
-      {
-        category: "Funcionalidades",
-        items: [
-          { text: "Integración omnicanal completa", included: true },
-          { text: "Soporte multilingüe (todos los idiomas)", included: true },
-          { text: "Base de conocimiento ilimitada", included: true },
-          { text: "Business Intelligence completo", included: true },
-          { text: "Agent Swarm (enjambre de agentes cooperativos)", included: true,
-            hasInfo: true,
-            tooltip: `Agent Swarm permite que múltiples asistentes de IA trabajen juntos, cada uno especializado en un área, comunicándose entre sí para resolver problemas complejos de manera colaborativa, como un equipo de expertos humanos.`
-          },
-          { text: "Personalización completa de la solución", included: true },
-        ]
-      },
-      {
-        category: "Soporte",
-        items: [
-          { text: "Implementación white-glove", included: true },
-          { text: "Soporte prioritario 24/7", included: true },
-          { text: "Actualizaciones de modelo exclusivas", included: true },
-          { text: "Capacitación empresarial completa", included: true },
-          { text: "Integraciones empresariales a medida", included: true },
-          { text: "Equipo técnico dedicado", included: true },
-          { text: "API personalizada", included: true },
-          { text: "SLA garantizado", included: true },
+          { text: "Todo lo incluido en AI Integrator, más:", included: true },
+          { text: "Desarrollo e Implementación a Medida", included: true },
+          { text: "Equipo Dedicado de Ingenieros de IA", included: true },
+          { text: "Integración con Sistemas Empresariales Existentes", included: true },
+          { text: "Formación Completa para Equipos Internos", included: true },
+          { text: "Análisis Avanzado de Datos y Business Intelligence", included: true },
+          { text: "Soluciones de IA Multimodales", included: true },
+          { text: "Acuerdos de Nivel de Servicio Personalizados", included: true },
+          { text: "Consultoría Estratégica a Nivel Ejecutivo", included: true },
         ]
       }
     ],
@@ -202,7 +120,7 @@ const plans = [
     bgGradient: "from-rose-600/10 to-pink-600/10",
     borderGradient: "border-rose-500/30",
     buttonText: "Contactar Ventas",
-    callToAction: "Ideal para empresas con más de 200 empleados"
+    callToAction: "Para organizaciones con necesidades complejas"
   }
 ];
 
@@ -236,43 +154,40 @@ export default function Pricing() {
   );
 
   // Componente para las características del plan
-  const FeatureCategory = ({ category, items, planName }) => (
-    <div className="mb-6 last:mb-0">
-      <h4 className="text-white font-medium mb-3 text-sm uppercase tracking-wider">{category}</h4>
-      <div className="space-y-3">
-        {items.map((feature, i) => (
-          <div key={i} className="flex items-start gap-3 relative group">
-            <span className="text-green-500 mt-0.5">
-              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 13L9 17L19 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </span>
-            <span className="text-gray-300 text-sm">
-              {feature.text}
-              {feature.hasInfo && (
-                <button
-                  className="ml-2 inline-flex items-center justify-center w-4 h-4 rounded-full bg-gray-700 hover:bg-gray-600 text-xs text-white font-semibold cursor-help transition-colors"
-                  onMouseEnter={() => setActiveTooltip(planName + i)}
-                  onMouseLeave={() => setActiveTooltip(null)}
-                >
-                  i
-                </button>
-              )}
-            </span>
-            {feature.tooltip && activeTooltip === planName + i && (
-              <div className="absolute bottom-full left-8 mb-2 w-80 p-4 bg-gray-800 rounded-xl shadow-xl border border-gray-700 text-sm text-gray-300 z-50">
-                {feature.tooltip}
-                <div className="absolute -bottom-2 left-4 w-4 h-4 bg-gray-800 border-r border-b border-gray-700 transform rotate-45"></div>
-              </div>
+  const FeatureList = ({ items, planName }) => (
+    <div className="space-y-4">
+      {items.map((feature, i) => (
+        <div key={i} className="flex items-start gap-3 relative group">
+          <span className="text-indigo-400 mt-0.5 flex-shrink-0">
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 13L9 17L19 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </span>
+          <span className="text-gray-300">
+            {feature.text}
+            {feature.hasInfo && (
+              <button
+                className="ml-2 inline-flex items-center justify-center w-4 h-4 rounded-full bg-gray-700 hover:bg-gray-600 text-xs text-white font-semibold cursor-help transition-colors"
+                onMouseEnter={() => setActiveTooltip(planName + i)}
+                onMouseLeave={() => setActiveTooltip(null)}
+              >
+                i
+              </button>
             )}
-          </div>
-        ))}
-      </div>
+          </span>
+          {feature.tooltip && activeTooltip === planName + i && (
+            <div className="absolute bottom-full left-8 mb-2 w-80 p-4 bg-gray-800 rounded-xl shadow-xl border border-gray-700 text-sm text-gray-300 z-50">
+              {feature.tooltip}
+              <div className="absolute -bottom-2 left-4 w-4 h-4 bg-gray-800 border-r border-b border-gray-700 transform rotate-45"></div>
+            </div>
+          )}
+        </div>
+      ))}
     </div>
   );
 
   return (
-    <section className="py-24 bg-gradient-to-b from-gray-900 via-indigo-900/20 to-gray-900 relative overflow-hidden" id="precios">
+    <section className="py-24 bg-gradient-to-b from-gray-900 via-indigo-900/20 to-gray-900 relative overflow-hidden" id="servicios">
       {/* Elementos decorativos de fondo */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute w-[40rem] h-[40rem] -top-20 -left-20 bg-purple-500/5 rounded-full blur-3xl"></div>
@@ -287,47 +202,19 @@ export default function Pricing() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="inline-block px-4 py-1 rounded-full bg-gradient-to-r from-purple-500/20 to-indigo-500/20 border border-purple-500/30 text-purple-300 text-sm font-medium mb-6">
-            Planes Personalizados
-          </div>
-
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Planes que <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-400">escalan contigo</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            Nuestros <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-400">Servicios</span>
           </h2>
 
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Soluciones adaptadas a las necesidades específicas de tu empresa, con precios transparentes y sin sorpresas
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+            Soluciones de IA adaptadas a las necesidades específicas de tu empresa
           </p>
-        </motion.div>
 
-        {/* Estadísticas destacadas */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16"
-        >
-          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 text-center">
-            <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 to-indigo-400 text-transparent bg-clip-text mb-2">3.5x</div>
-            <p className="text-gray-400">ROI promedio</p>
-          </div>
-          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 text-center">
-            <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 to-indigo-400 text-transparent bg-clip-text mb-2">14 días</div>
-            <p className="text-gray-400">Implementación rápida</p>
-          </div>
-          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 text-center">
-            <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 to-indigo-400 text-transparent bg-clip-text mb-2">95%</div>
-            <p className="text-gray-400">Satisfacción del cliente</p>
-          </div>
-          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 text-center">
-            <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 to-indigo-400 text-transparent bg-clip-text mb-2">24/7</div>
-            <p className="text-gray-400">Soporte técnico</p>
-          </div>
+          <div className="w-24 h-1 bg-indigo-500 mx-auto"></div>
         </motion.div>
 
         {/* Planes */}
-        <div className="grid md:grid-cols-3 gap-8 mb-24">
+        <div className="grid md:grid-cols-2 gap-8 mb-24">
           {plans.map((plan, index) => (
             <motion.div
               key={plan.name}
@@ -335,91 +222,58 @@ export default function Pricing() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className={`relative ${plan.popular ? 'md:-mt-8 md:mb-8' : ''}`}
+              className="relative"
             >
-              {plan.popular && (
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
-                  <span className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-4 py-1 rounded-full text-sm font-medium shadow-lg">
-                    Más Popular
-                  </span>
+              <div className="bg-gray-900 border border-gray-800 rounded-2xl p-8 h-full flex flex-col">
+                {/* Encabezado del plan */}
+                <div className="mb-8">
+                  <h3 className="text-4xl font-bold text-white mb-2">{plan.name}</h3>
+                  <p className="text-xl text-gray-300 mb-6">{plan.subtitle}</p>
+
+                  <div className="w-full h-px bg-gray-800 my-6"></div>
+
+                  <p className="text-gray-400 text-sm mb-4">{plan.commitment}</p>
                 </div>
-              )}
 
-              <div className={`bg-gradient-to-br ${plan.gradient} p-[1px] rounded-2xl h-full`}>
-                <div className="bg-gray-900/90 backdrop-blur-sm rounded-2xl p-8 h-full flex flex-col">
-                  {/* Encabezado del plan */}
-                  <div className="mb-6">
-                    <div className="flex items-center mb-4">
-                      <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${plan.bgGradient} flex items-center justify-center mr-3`}>
-                        {plan.icon}
-                      </div>
-                      <div>
-                        <h3 className="text-2xl font-bold text-white">{plan.name}</h3>
-                        <p className="text-gray-400 text-sm">{plan.subtitle}</p>
-                      </div>
-                    </div>
-                    <p className="text-gray-300 mb-4">{plan.description}</p>
-                    <div className={`w-12 h-1 bg-gradient-to-r ${plan.gradient}`}></div>
-                  </div>
-
-                  {/* Botón de acción */}
-                  <motion.button
-                    whileHover={{ scale: 1.03 }}
-                    whileTap={{ scale: 0.97 }}
-                    onClick={() => {
+                {/* Botón de acción */}
+                <motion.button
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.97 }}
+                  onClick={() => {
+                    // @ts-ignore
+                    if (window.Calendly) {
                       // @ts-ignore
-                      if (window.Calendly) {
-                        // @ts-ignore
-                        window.Calendly.initPopupWidget({
-                          url: 'https://calendly.com/clientia/llamada-asistente-profesional-marketing'
-                        });
-                      }
-                    }}
-                    className={`w-full bg-gradient-to-r ${plan.gradient}
-                             text-white px-6 py-3 rounded-xl font-medium mb-6
-                             hover:shadow-lg shadow-${plan.gradient.split('-').pop()}/20 transition-all`}
-                  >
-                    {plan.buttonText}
-                  </motion.button>
+                      window.Calendly.initPopupWidget({
+                        url: 'https://calendly.com/clientia/llamada-asistente-profesional-marketing'
+                      });
+                    }
+                  }}
+                  className="w-full border border-white/20 bg-transparent hover:bg-white/5
+                           text-white px-6 py-3 rounded-xl font-medium mb-10
+                           hover:shadow-lg transition-all"
+                >
+                  {plan.buttonText}
+                </motion.button>
 
-                  <p className="text-gray-400 text-sm text-center mb-6">{plan.callToAction}</p>
+                <h4 className="text-xl font-semibold text-white mb-6">Lo que incluye:</h4>
 
-                  {/* Tabs de características */}
-                  <div className="flex border-b border-gray-800 mb-6">
-                    {plan.features.map((category, i) => (
-                      <button
-                        key={i}
-                        className={`flex-1 text-sm py-2 px-1 ${
-                          activeTab === i
-                            ? `text-white border-b-2 border-${plan.gradient.split('-').pop()}`
-                            : 'text-gray-500 hover:text-gray-300'
-                        }`}
-                        onClick={() => setActiveTab(i)}
-                      >
-                        {category.category}
-                      </button>
-                    ))}
-                  </div>
-
-                  {/* Características del plan */}
-                  <div className="flex-grow">
-                    {plan.features.map((category, i) => (
-                      <div key={i} className={activeTab === i ? 'block' : 'hidden'}>
-                        <FeatureCategory
-                          category={category.category}
-                          items={category.items}
-                          planName={plan.name}
-                        />
-                      </div>
-                    ))}
-                  </div>
+                {/* Características del plan */}
+                <div className="flex-grow">
+                  {plan.features.map((category, i) => (
+                    <div key={i}>
+                      <FeatureList
+                        items={category.items}
+                        planName={plan.name}
+                      />
+                    </div>
+                  ))}
                 </div>
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* Testimonios */}
+        {/* Casos de éxito */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -428,19 +282,44 @@ export default function Pricing() {
           className="mb-24"
         >
           <div className="text-center mb-12">
-            <div className="inline-block px-4 py-1 rounded-full bg-gradient-to-r from-purple-500/20 to-indigo-500/20 border border-purple-500/30 text-purple-300 text-sm font-medium mb-6">
-              Testimonios
-            </div>
-
             <h3 className="text-3xl font-bold text-white mb-4">
-              Lo que dicen nuestros clientes
+              Casos de Éxito
             </h3>
+            <div className="w-16 h-1 bg-indigo-500 mx-auto"></div>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            {testimonials.map((testimonial, index) => (
-              <TestimonialCard key={index} testimonial={testimonial} index={index} />
-            ))}
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-gray-900 border border-gray-800 rounded-2xl p-8">
+              <h4 className="text-2xl font-bold text-white mb-4">Tatu.ink</h4>
+              <p className="text-gray-300 mb-6">
+                Aplicación de gestión para estudios de tatuajes construida con asistentes de IA para optimizar la programación, gestión de clientes y diseño.
+              </p>
+              <div className="flex items-center">
+                <div className="mr-4">
+                  <div className="w-12 h-12 rounded-full bg-indigo-600 flex items-center justify-center text-white font-bold">AS</div>
+                </div>
+                <div>
+                  <p className="text-white font-medium">Alvaro Souza</p>
+                  <p className="text-gray-400 text-sm">Fundador & CEO, Tatu.ink</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-gray-900 border border-gray-800 rounded-2xl p-8">
+              <h4 className="text-2xl font-bold text-white mb-4">MulticolorInk</h4>
+              <p className="text-gray-300 mb-6">
+                Implementación de agentes de IA para servicio al cliente omnicanal y análisis de negocio en tiempo real para una tienda de suministros de arte.
+              </p>
+              <div className="flex items-center">
+                <div className="mr-4">
+                  <div className="w-12 h-12 rounded-full bg-indigo-600 flex items-center justify-center text-white font-bold">AJ</div>
+                </div>
+                <div>
+                  <p className="text-white font-medium">Alejandro</p>
+                  <p className="text-gray-400 text-sm">Fundador & CEO, MulticolorInk</p>
+                </div>
+              </div>
+            </div>
           </div>
         </motion.div>
 
@@ -453,13 +332,10 @@ export default function Pricing() {
           className="mb-24"
         >
           <div className="text-center mb-12">
-            <div className="inline-block px-4 py-1 rounded-full bg-gradient-to-r from-purple-500/20 to-indigo-500/20 border border-purple-500/30 text-purple-300 text-sm font-medium mb-6">
-              Preguntas Frecuentes
-            </div>
-
             <h3 className="text-3xl font-bold text-white mb-4">
-              Todo lo que necesitas saber
+              Preguntas Frecuentes
             </h3>
+            <div className="w-16 h-1 bg-indigo-500 mx-auto"></div>
           </div>
 
           <div className="max-w-3xl mx-auto">
@@ -474,7 +350,7 @@ export default function Pricing() {
               >
                 <button
                   onClick={() => setActiveFaq(activeFaq === index ? null : index)}
-                  className="w-full flex justify-between items-center bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 text-left hover:bg-white/10 transition-colors"
+                  className="w-full flex justify-between items-center bg-gray-900 border border-gray-800 rounded-xl p-4 text-left hover:bg-gray-800/50 transition-colors"
                 >
                   <h4 className="text-white font-medium pr-8">{faq.question}</h4>
                   <svg
@@ -492,7 +368,7 @@ export default function Pricing() {
                     animate={{ opacity: 1, height: 'auto' }}
                     exit={{ opacity: 0, height: 0 }}
                     transition={{ duration: 0.3 }}
-                    className="bg-white/5 backdrop-blur-sm border-x border-b border-white/10 rounded-b-xl p-4 text-gray-300 -mt-1 text-sm"
+                    className="bg-gray-900 border-x border-b border-gray-800 rounded-b-xl p-4 text-gray-300 -mt-1"
                   >
                     {faq.answer}
                   </motion.div>
