@@ -1,28 +1,6 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 
-// Testimonios para la sección de precios
-const testimonials = [
-  {
-    quote: "Implementar asistentes de IA en nuestra empresa ha transformado completamente nuestra operación. El ROI ha sido impresionante.",
-    author: "Carolina Méndez",
-    position: "Directora de Innovación, Grupo Falabella",
-    image: "https://randomuser.me/api/portraits/women/32.jpg"
-  },
-  {
-    quote: "La capacidad de personalización y la facilidad de implementación nos permitió ver resultados desde la primera semana.",
-    author: "Rodrigo Fuentes",
-    position: "CTO, Bci Seguros",
-    image: "https://randomuser.me/api/portraits/men/46.jpg"
-  },
-  {
-    quote: "El soporte y acompañamiento durante todo el proceso ha sido excepcional. Recomiendo Asistentes de IA sin dudarlo.",
-    author: "Valentina Torres",
-    position: "Gerente de Operaciones, Cencosud",
-    image: "https://randomuser.me/api/portraits/women/65.jpg"
-  }
-];
-
 // Preguntas frecuentes sobre precios
 const pricingFaqs = [
   {
@@ -129,45 +107,22 @@ export default function Pricing() {
   const [activeTooltip, setActiveTooltip] = useState(null);
   const [activeFaq, setActiveFaq] = useState(null);
 
-  // Componente para las tarjetas de testimonios
-  const TestimonialCard = ({ testimonial, index }) => (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: 0.1 * index }}
-      viewport={{ once: true }}
-      className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 shadow-lg"
-    >
-      <div className="flex items-center mb-4">
-        <img
-          src={testimonial.image}
-          alt={testimonial.author}
-          className="w-12 h-12 rounded-full mr-4 border-2 border-purple-500"
-        />
-        <div>
-          <h4 className="text-white font-medium">{testimonial.author}</h4>
-          <p className="text-gray-400 text-sm">{testimonial.position}</p>
-        </div>
-      </div>
-      <p className="text-gray-300 italic">"{testimonial.quote}"</p>
-    </motion.div>
-  );
-
   // Componente para las características del plan
   const FeatureList = ({ items, planName }) => (
-    <div className="space-y-4">
+    <div className="space-y-6">
       {items.map((feature, i) => (
-        <div key={i} className="flex items-start gap-3 relative group">
-          <span className="text-indigo-400 mt-0.5 flex-shrink-0">
-            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M5 13L9 17L19 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <div key={i} className="flex items-start gap-4 relative group">
+          <span className="text-white mt-0.5 flex-shrink-0">
+            <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.5" />
+              <path d="M8 12L11 15L16 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </span>
-          <span className="text-gray-300">
+          <span className="text-gray-300 text-lg">
             {feature.text}
             {feature.hasInfo && (
               <button
-                className="ml-2 inline-flex items-center justify-center w-4 h-4 rounded-full bg-gray-700 hover:bg-gray-600 text-xs text-white font-semibold cursor-help transition-colors"
+                className="ml-2 inline-flex items-center justify-center w-5 h-5 rounded-full bg-gray-700 hover:bg-gray-600 text-xs text-white font-semibold cursor-help transition-colors"
                 onMouseEnter={() => setActiveTooltip(planName + i)}
                 onMouseLeave={() => setActiveTooltip(null)}
               >
@@ -187,11 +142,12 @@ export default function Pricing() {
   );
 
   return (
-    <section className="py-24 bg-gradient-to-b from-gray-900 via-indigo-900/20 to-gray-900 relative overflow-hidden" id="servicios">
+    <section className="py-24 bg-black relative overflow-hidden" id="servicios">
       {/* Elementos decorativos de fondo */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute w-[40rem] h-[40rem] -top-20 -left-20 bg-purple-500/5 rounded-full blur-3xl"></div>
-        <div className="absolute w-[30rem] h-[30rem] bottom-0 right-1/4 bg-indigo-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute w-[60rem] h-[60rem] -top-40 -left-40 bg-indigo-900/10 rounded-full blur-3xl"></div>
+        <div className="absolute w-[50rem] h-[50rem] bottom-0 right-1/3 bg-purple-900/10 rounded-full blur-3xl"></div>
+        <div className="absolute w-full h-px top-0 left-0 bg-gradient-to-r from-transparent via-gray-800 to-transparent"></div>
       </div>
 
       <div className="container mx-auto px-4 relative">
@@ -200,17 +156,15 @@ export default function Pricing() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h2 className="text-5xl md:text-6xl font-bold text-white mb-8">
             Nuestros <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-400">Servicios</span>
           </h2>
 
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Soluciones de IA adaptadas a las necesidades específicas de tu empresa
           </p>
-
-          <div className="w-24 h-1 bg-indigo-500 mx-auto"></div>
         </motion.div>
 
         {/* Planes */}
@@ -224,15 +178,15 @@ export default function Pricing() {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="bg-gray-900 border border-gray-800 rounded-2xl p-8 h-full flex flex-col">
+              <div className="bg-black border border-gray-800 rounded-3xl p-8 h-full flex flex-col">
                 {/* Encabezado del plan */}
                 <div className="mb-8">
-                  <h3 className="text-4xl font-bold text-white mb-2">{plan.name}</h3>
-                  <p className="text-xl text-gray-300 mb-6">{plan.subtitle}</p>
+                  <h3 className="text-5xl font-bold text-white mb-3">{plan.name}</h3>
+                  <p className="text-xl text-gray-300">{plan.subtitle}</p>
 
-                  <div className="w-full h-px bg-gray-800 my-6"></div>
+                  <div className="w-full h-px bg-gray-800 my-8"></div>
 
-                  <p className="text-gray-400 text-sm mb-4">{plan.commitment}</p>
+                  <p className="text-gray-400 text-sm mb-6">{plan.commitment}</p>
                 </div>
 
                 {/* Botón de acción */}
@@ -248,14 +202,14 @@ export default function Pricing() {
                       });
                     }
                   }}
-                  className="w-full border border-white/20 bg-transparent hover:bg-white/5
-                           text-white px-6 py-3 rounded-xl font-medium mb-10
-                           hover:shadow-lg transition-all"
+                  className="w-full border border-white/30 bg-transparent hover:bg-white/5
+                           text-white px-6 py-4 rounded-full font-medium mb-12
+                           hover:shadow-lg transition-all text-lg"
                 >
                   {plan.buttonText}
                 </motion.button>
 
-                <h4 className="text-xl font-semibold text-white mb-6">Lo que incluye:</h4>
+                <h4 className="text-2xl font-semibold text-white mb-8">What's included:</h4>
 
                 {/* Características del plan */}
                 <div className="flex-grow">
@@ -273,56 +227,6 @@ export default function Pricing() {
           ))}
         </div>
 
-        {/* Casos de éxito */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="mb-24"
-        >
-          <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-white mb-4">
-              Casos de Éxito
-            </h3>
-            <div className="w-16 h-1 bg-indigo-500 mx-auto"></div>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-gray-900 border border-gray-800 rounded-2xl p-8">
-              <h4 className="text-2xl font-bold text-white mb-4">Tatu.ink</h4>
-              <p className="text-gray-300 mb-6">
-                Aplicación de gestión para estudios de tatuajes construida con asistentes de IA para optimizar la programación, gestión de clientes y diseño.
-              </p>
-              <div className="flex items-center">
-                <div className="mr-4">
-                  <div className="w-12 h-12 rounded-full bg-indigo-600 flex items-center justify-center text-white font-bold">AS</div>
-                </div>
-                <div>
-                  <p className="text-white font-medium">Alvaro Souza</p>
-                  <p className="text-gray-400 text-sm">Fundador & CEO, Tatu.ink</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-gray-900 border border-gray-800 rounded-2xl p-8">
-              <h4 className="text-2xl font-bold text-white mb-4">MulticolorInk</h4>
-              <p className="text-gray-300 mb-6">
-                Implementación de agentes de IA para servicio al cliente omnicanal y análisis de negocio en tiempo real para una tienda de suministros de arte.
-              </p>
-              <div className="flex items-center">
-                <div className="mr-4">
-                  <div className="w-12 h-12 rounded-full bg-indigo-600 flex items-center justify-center text-white font-bold">AJ</div>
-                </div>
-                <div>
-                  <p className="text-white font-medium">Alejandro</p>
-                  <p className="text-gray-400 text-sm">Fundador & CEO, MulticolorInk</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </motion.div>
-
         {/* FAQs */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -331,11 +235,10 @@ export default function Pricing() {
           viewport={{ once: true }}
           className="mb-24"
         >
-          <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-white mb-4">
+          <div className="text-center mb-16">
+            <h3 className="text-4xl font-bold text-white mb-6">
               Preguntas Frecuentes
             </h3>
-            <div className="w-16 h-1 bg-indigo-500 mx-auto"></div>
           </div>
 
           <div className="max-w-3xl mx-auto">
@@ -346,21 +249,23 @@ export default function Pricing() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 * index }}
                 viewport={{ once: true }}
-                className="mb-4"
+                className="mb-6"
               >
                 <button
                   onClick={() => setActiveFaq(activeFaq === index ? null : index)}
-                  className="w-full flex justify-between items-center bg-gray-900 border border-gray-800 rounded-xl p-4 text-left hover:bg-gray-800/50 transition-colors"
+                  className="w-full flex justify-between items-center bg-black border-b border-gray-800 p-6 text-left hover:bg-gray-900/20 transition-colors rounded-t-xl"
                 >
-                  <h4 className="text-white font-medium pr-8">{faq.question}</h4>
-                  <svg
-                    className={`w-5 h-5 text-gray-400 transform transition-transform ${activeFaq === index ? 'rotate-180' : ''}`}
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
+                  <h4 className="text-white font-medium text-lg pr-8">{faq.question}</h4>
+                  <div className={`w-8 h-8 rounded-full border border-gray-700 flex items-center justify-center transition-transform ${activeFaq === index ? 'rotate-180 bg-indigo-600 border-indigo-600' : ''}`}>
+                    <svg
+                      className="w-4 h-4 text-gray-400"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
                 </button>
                 {activeFaq === index && (
                   <motion.div
@@ -368,7 +273,7 @@ export default function Pricing() {
                     animate={{ opacity: 1, height: 'auto' }}
                     exit={{ opacity: 0, height: 0 }}
                     transition={{ duration: 0.3 }}
-                    className="bg-gray-900 border-x border-b border-gray-800 rounded-b-xl p-4 text-gray-300 -mt-1"
+                    className="bg-gray-900/20 p-6 text-gray-300 rounded-b-xl"
                   >
                     {faq.answer}
                   </motion.div>
@@ -386,11 +291,11 @@ export default function Pricing() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <div className="bg-gradient-to-br from-indigo-900/40 to-purple-900/40 backdrop-blur-md border border-indigo-500/20 rounded-2xl p-10 max-w-4xl mx-auto">
-            <h3 className="text-3xl font-bold text-white mb-4">
+          <div className="bg-gradient-to-br from-indigo-900/30 to-purple-900/30 backdrop-blur-md border border-indigo-500/20 rounded-3xl p-16 max-w-4xl mx-auto">
+            <h3 className="text-4xl font-bold text-white mb-6">
               ¿Listo para transformar tu empresa con IA?
             </h3>
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
               Agenda una consulta gratuita y descubre cómo podemos crear una solución personalizada para tus necesidades específicas
             </p>
             <motion.button
@@ -405,11 +310,11 @@ export default function Pricing() {
                   });
                 }
               }}
-              className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-8 py-4 rounded-full text-lg font-medium hover:shadow-lg hover:shadow-purple-500/30 transition-all"
+              className="bg-white text-black px-10 py-5 rounded-full text-lg font-semibold hover:shadow-lg hover:shadow-white/20 transition-all"
             >
               Agenda una Consulta Gratis
             </motion.button>
-            <p className="text-gray-400 mt-4">
+            <p className="text-gray-400 mt-6">
               Sin compromisos. Sin presión de ventas. Solo una conversación sobre tus necesidades.
             </p>
           </div>
