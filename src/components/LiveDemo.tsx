@@ -549,8 +549,8 @@ const TabButton = ({ isActive, onClick, children }: { isActive: boolean; onClick
   <button
     onClick={onClick}
     className={`transition-all duration-200 px-6 py-3 rounded-xl text-left font-medium ${
-      isActive 
-        ? 'bg-gradient-to-br from-indigo-800/50 to-purple-900/50 backdrop-blur-sm border border-indigo-500/30 text-white' 
+      isActive
+        ? 'bg-gradient-to-br from-indigo-800/50 to-purple-900/50 backdrop-blur-sm border border-indigo-500/30 text-white'
         : 'bg-white/5 hover:bg-white/10 border border-white/5 text-gray-300'
     }`}
   >
@@ -563,6 +563,7 @@ export default function LiveDemo() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
   const chatContainerRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   // Reiniciar la conversación cuando cambie de tab
   useEffect(() => {
@@ -591,19 +592,53 @@ export default function LiveDemo() {
     }
   }, [messages]);
 
-  return (
-    <section className="py-24 bg-gradient-to-b from-gray-900 to-indigo-900" id="demo">
-      <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-2 text-white">
-          Demo en Vivo
-        </h2>
-        <p className="text-xl text-gray-300 text-center mb-12">
-          Mira cómo nuestros agentes de IA transforman la operación de tu empresa
-        </p>
+  // Set visibility after a short delay for animations
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 100);
 
-        <div className="flex flex-col gap-6">
-          {/* Tabs */}
-          <div className="flex flex-wrap gap-4">
+    return () => clearTimeout(timer);
+  }, []);
+
+  return (
+    <section className="py-24 bg-gradient-to-b from-gray-900 to-indigo-900 relative overflow-hidden" id="demo">
+      {/* Elementos decorativos de fondo */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute w-[35rem] h-[35rem] top-1/4 -right-20 bg-purple-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute w-[30rem] h-[30rem] bottom-0 left-1/4 bg-indigo-500/5 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="container max-w-6xl mx-auto px-4 relative">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <div className="inline-block px-4 py-1 rounded-full bg-gradient-to-r from-purple-500/20 to-indigo-500/20 border border-purple-500/30 text-purple-300 text-sm font-medium mb-6">
+            Experiencia Interactiva
+          </div>
+
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
+            Transforma tu Empresa con IA
+          </h2>
+
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            Mira cómo nuestros asistentes de IA resuelven problemas reales y generan resultados medibles para tu negocio
+          </p>
+        </motion.div>
+
+        <div className="flex flex-col gap-8">
+          {/* Tabs - Versión mejorada */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="flex flex-wrap justify-center gap-3"
+          >
             {conversations.map((conv, index) => (
               <TabButton
                 key={index}
@@ -613,13 +648,29 @@ export default function LiveDemo() {
                 {conv.title}
               </TabButton>
             ))}
-          </div>
+          </motion.div>
 
-          {/* Chat Container */}
-          <div className="bg-gradient-to-br from-indigo-800/30 to-purple-900/30 backdrop-blur-sm border border-indigo-500/20 rounded-2xl p-6">
-            <div 
+          {/* Chat Container - Versión mejorada */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="bg-gradient-to-br from-indigo-900/40 to-purple-900/40 backdrop-blur-md border border-indigo-500/20 rounded-2xl p-6 shadow-xl"
+          >
+            <div className="flex items-center justify-between mb-4 border-b border-indigo-500/20 pb-3">
+              <div className="flex items-center gap-3">
+                <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                <span className="text-white font-medium">Asistente IA Activo</span>
+              </div>
+              <div className="text-gray-400 text-sm">
+                Caso de uso: {conversations[activeTab].title}
+              </div>
+            </div>
+
+            <div
               ref={chatContainerRef}
-              className="flex flex-col gap-4 h-[600px] overflow-y-auto scrollbar-thin scrollbar-thumb-indigo-500/20 scrollbar-track-transparent"
+              className="flex flex-col gap-4 h-[600px] overflow-y-auto scrollbar-thin scrollbar-thumb-indigo-500/20 scrollbar-track-transparent pr-2"
             >
               {messages.map((message, index) => (
                 <motion.div
@@ -627,37 +678,52 @@ export default function LiveDemo() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3 }}
-                  className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}
+                  className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'} items-start gap-3`}
                 >
+                  {message.sender === 'ai' && (
+                    <div className="w-8 h-8 rounded-full bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center text-white text-xs font-bold">
+                      IA
+                    </div>
+                  )}
+
                   <div
                     className={`max-w-[80%] rounded-2xl px-6 py-4 ${
                       message.sender === 'user'
-                        ? 'bg-gradient-to-r from-purple-500 to-indigo-500 text-white'
-                        : 'bg-white/10 text-gray-200'
+                        ? 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-lg shadow-purple-500/10'
+                        : 'bg-white/10 text-gray-200 border border-white/5 shadow-lg'
                     }`}
                   >
                     {message.text}
                     {message.references && (
-                      <div className="mt-4 space-y-3">
+                      <div className="mt-4 space-y-4">
                         {message.references.map(ref => (
-                          <div key={ref.id}>
+                          <div key={ref.id} className="bg-white/5 rounded-xl p-3 border border-white/10">
                             {ref.preview && (
-                              <div className="mb-2">
+                              <div className="mb-3">
                                 {ref.preview}
                               </div>
                             )}
                             <div className="flex items-center gap-2 text-xs">
                               {ref.type === 'excel' && (
-                                <span className="w-4 h-4 bg-green-600 rounded flex items-center justify-center text-white">X</span>
+                                <span className="w-6 h-6 bg-green-600 rounded flex items-center justify-center text-white">X</span>
                               )}
                               {ref.type === 'pdf' && (
-                                <span className="w-4 h-4 bg-red-600 rounded flex items-center justify-center text-white">P</span>
+                                <span className="w-6 h-6 bg-red-600 rounded flex items-center justify-center text-white">P</span>
                               )}
                               {ref.type === 'doc' && (
-                                <span className="w-4 h-4 bg-blue-600 rounded flex items-center justify-center text-white">W</span>
+                                <span className="w-6 h-6 bg-blue-600 rounded flex items-center justify-center text-white">W</span>
                               )}
-                              <span className={message.sender === 'user' ? 'text-white' : 'text-gray-300'}>
+                              {ref.type === 'chart' && (
+                                <span className="w-6 h-6 bg-purple-600 rounded flex items-center justify-center text-white">C</span>
+                              )}
+                              {ref.type === 'table' && (
+                                <span className="w-6 h-6 bg-indigo-600 rounded flex items-center justify-center text-white">T</span>
+                              )}
+                              <span className="text-gray-300 font-medium">
                                 {ref.title}
+                              </span>
+                              <span className="ml-auto bg-indigo-500/20 text-indigo-300 px-2 py-0.5 rounded text-[10px]">
+                                Ver completo
                               </span>
                             </div>
                           </div>
@@ -665,12 +731,109 @@ export default function LiveDemo() {
                       </div>
                     )}
                   </div>
+
+                  {message.sender === 'user' && (
+                    <div className="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center text-white text-xs font-bold">
+                      TÚ
+                    </div>
+                  )}
                 </motion.div>
               ))}
+
+              {currentMessageIndex < conversations[activeTab].messages.length && (
+                <div className="flex justify-start items-start gap-3 mt-2">
+                  <div className="w-8 h-8 rounded-full bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center text-white text-xs font-bold">
+                    IA
+                  </div>
+                  <div className="bg-white/5 rounded-2xl px-6 py-4 text-gray-400 border border-white/5">
+                    <div className="flex space-x-2 items-center">
+                      <div className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse"></div>
+                      <div className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse" style={{ animationDelay: '0.2s' }}></div>
+                      <div className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse" style={{ animationDelay: '0.4s' }}></div>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
-          </div>
+
+            {/* Barra de entrada simulada */}
+            <div className="mt-4 flex gap-3 items-center">
+              <div className="flex-1 bg-white/5 border border-indigo-500/20 rounded-xl px-4 py-3 text-gray-400">
+                Escribe tu mensaje...
+              </div>
+              <button className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-4 py-3 rounded-xl font-medium">
+                Enviar
+              </button>
+            </div>
+          </motion.div>
+
+          {/* Sección de beneficios clave */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            viewport={{ once: true }}
+            className="grid md:grid-cols-3 gap-6 mt-8"
+          >
+            <div className="bg-white/5 backdrop-blur-sm border border-indigo-500/20 rounded-xl p-6">
+              <div className="w-12 h-12 bg-gradient-to-br from-purple-500/20 to-indigo-500/20 rounded-lg flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">Respuestas Instantáneas</h3>
+              <p className="text-gray-300">Obtén información y análisis en segundos, no en días o semanas.</p>
+            </div>
+
+            <div className="bg-white/5 backdrop-blur-sm border border-indigo-500/20 rounded-xl p-6">
+              <div className="w-12 h-12 bg-gradient-to-br from-purple-500/20 to-indigo-500/20 rounded-lg flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">Múltiples Formatos</h3>
+              <p className="text-gray-300">Visualiza datos en gráficos, tablas y documentos para mejor comprensión.</p>
+            </div>
+
+            <div className="bg-white/5 backdrop-blur-sm border border-indigo-500/20 rounded-xl p-6">
+              <div className="w-12 h-12 bg-gradient-to-br from-purple-500/20 to-indigo-500/20 rounded-lg flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">Análisis Avanzado</h3>
+              <p className="text-gray-300">Obtén insights accionables basados en datos reales de tu negocio.</p>
+            </div>
+          </motion.div>
+
+          {/* CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mt-12"
+          >
+            <button
+              onClick={() => {
+                // @ts-ignore
+                if (window.Calendly) {
+                  // @ts-ignore
+                  window.Calendly.initPopupWidget({
+                    url: 'https://calendly.com/clientia/llamada-asistente-profesional-marketing'
+                  });
+                }
+              }}
+              className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-8 py-4 rounded-full text-lg font-medium hover:shadow-lg hover:shadow-purple-500/30 transition-all"
+            >
+              Agenda una Demo Personalizada
+            </button>
+            <p className="text-gray-400 mt-4">
+              Descubre cómo podemos adaptar esta tecnología a tus necesidades específicas
+            </p>
+          </motion.div>
         </div>
       </div>
     </section>
   );
-} 
+}
