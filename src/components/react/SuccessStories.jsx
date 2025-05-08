@@ -12,9 +12,9 @@ const cases = [
       revenue: "+52%"
     },
     quote: "Gracias a la implementación de IA en nuestra plataforma, los tatuadores pueden gestionar su negocio de manera más eficiente, enfocándose en lo que realmente importa: su arte.",
-    author: "Matías Fernández",
+    author: "Alvaro Souza",
     position: "CEO & Fundador",
-    image: "https://randomuser.me/api/portraits/men/42.jpg",
+    image: null,
     description: "Tatu.ink es una aplicación SaaS que ayuda a los tatuadores con su gestión interna, desde agendamiento hasta seguimiento de clientes. La plataforma fue desarrollada utilizando herramientas avanzadas como Lovable, Bolt.New, Cursos y Windsurf, permitiendo una experiencia fluida tanto para los artistas como para sus clientes.",
     solution: "Implementamos un asistente de IA que automatiza la gestión de citas, envía recordatorios a clientes, y proporciona análisis de tendencias para ayudar a los tatuadores a optimizar su negocio.",
     results: "Los estudios de tatuajes que utilizan Tatu.ink han reportado un aumento del 52% en ingresos y una reducción del 78% en el tiempo dedicado a tareas administrativas."
@@ -29,9 +29,9 @@ const cases = [
       sales: "+48%"
     },
     quote: "La implementación de asistentes de IA en nuestros canales de comunicación ha revolucionado nuestra atención al cliente y análisis de negocio, permitiéndonos crecer exponencialmente.",
-    author: "Valentina Rojas",
-    position: "Directora de Operaciones",
-    image: "https://randomuser.me/api/portraits/women/33.jpg",
+    author: "Alejandro",
+    position: "CEO & Fundador",
+    image: null,
     description: "MulticolorInk.com es un e-commerce especializado en la venta de suministros para tatuajes y arte corporal. La empresa necesitaba una solución omnicanal para atender a sus clientes a través de múltiples plataformas, así como análisis en tiempo real de su operación.",
     solution: "Desarrollamos un sistema integrado de asistentes personales y de proceso: un asistente conversacional para atención omnicanal (llamadas, WhatsApp y chat del e-commerce) y un asistente analítico para monitoreo y análisis del negocio en tiempo real.",
     results: "MulticolorInk ha logrado reducir su tiempo de respuesta en un 92%, aumentar la satisfacción del cliente en un 65% y, como resultado, incrementar sus ventas en un 48% en los primeros seis meses."
@@ -48,7 +48,7 @@ const cases = [
     quote: "Los asistentes de IA transformaron nuestra atención al cliente. Ahora respondemos consultas en segundos y nuestras ventas han aumentado significativamente.",
     author: "Carolina Pérez",
     position: "Gerente de Operaciones",
-    image: "https://randomuser.me/api/portraits/women/28.jpg",
+    image: null,
     description: "TechnoMart es un marketplace de productos tecnológicos que enfrentaba desafíos con la atención al cliente y la gestión de consultas técnicas sobre sus productos.",
     solution: "Implementamos un asistente conversacional con conocimiento técnico especializado, capaz de responder consultas detalladas sobre especificaciones de productos y compatibilidad.",
     results: "La satisfacción del cliente aumentó un 45%, el tiempo de respuesta se redujo en un 85% y las ventas crecieron un 32% gracias a la mejor experiencia de compra."
@@ -65,7 +65,7 @@ const cases = [
     quote: "La automatización de agendamiento y seguimiento de pacientes nos permitió enfocarnos en lo más importante: la atención médica.",
     author: "Dr. Andrés Soto",
     position: "Director Médico",
-    image: "https://randomuser.me/api/portraits/men/52.jpg",
+    image: null,
     description: "HealthCare Plus es una red de clínicas que buscaba optimizar sus procesos de agendamiento y seguimiento de pacientes para mejorar la experiencia de atención.",
     solution: "Desarrollamos un asistente de proceso que automatiza la gestión de citas, envía recordatorios personalizados y facilita el seguimiento post-consulta de los pacientes.",
     results: "El número de citas agendadas aumentó un 60%, la eficiencia operativa mejoró un 75% y la satisfacción de los pacientes creció un 40%."
@@ -236,11 +236,6 @@ export default function SuccessStories() {
                 </blockquote>
 
                 <div className="flex items-center gap-4">
-                  <img
-                    src={cases[activeCase].image}
-                    alt={cases[activeCase].author}
-                    className="w-12 h-12 rounded-full border-2 border-purple-500"
-                  />
                   <div>
                     <div className="font-medium text-white">{cases[activeCase].author}</div>
                     <div className="text-sm text-gray-400">{cases[activeCase].position}</div>
