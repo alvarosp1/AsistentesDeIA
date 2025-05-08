@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
+import CalButton from './react/CalButton';
 
 interface DataReference {
   id: string;
@@ -989,20 +990,12 @@ export default function LiveDemo() {
             viewport={{ once: true }}
             className="text-center mt-12"
           >
-            <button
-              onClick={() => {
-                // @ts-ignore
-                if (window.Calendly) {
-                  // @ts-ignore
-                  window.Calendly.initPopupWidget({
-                    url: 'https://calendly.com/clientia/llamada-asistente-profesional-marketing'
-                  });
-                }
-              }}
-              className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-8 py-4 rounded-full text-lg font-medium hover:shadow-lg hover:shadow-purple-500/30 transition-all"
+            <CalButton
+              variant="primary"
+              size="large"
             >
               Agenda una Demo Personalizada
-            </button>
+            </CalButton>
             <p className="text-gray-400 mt-4">
               Descubre cómo podemos adaptar esta tecnología a tus necesidades específicas
             </p>

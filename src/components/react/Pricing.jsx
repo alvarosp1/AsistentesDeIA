@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import CalendarEmbed from './CalendarEmbed';
+import CalButton from './CalButton';
 
 // Preguntas frecuentes sobre precios
 const pricingFaqs = [
@@ -201,26 +202,13 @@ export default function Pricing() {
                 </div>
 
                 {/* Botón de acción */}
-                <motion.button
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.97 }}
-                  onClick={() => {
-                    // @ts-ignore
-                    if (window.Calendly) {
-                      // @ts-ignore
-                      window.Calendly.initPopupWidget({
-                        url: 'https://calendly.com/clientia/llamada-asistente-profesional-marketing'
-                      });
-                    }
-                  }}
-                  className={`w-full ${plan.popular
-                    ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white'
-                    : 'border border-white/30 bg-transparent hover:bg-white/5 text-white'}
-                    px-5 py-3 rounded-full font-medium mb-8
-                    hover:shadow-lg transition-all text-base`}
+                <CalButton
+                  variant={plan.popular ? "primary" : "secondary"}
+                  size="medium"
+                  className="w-full mb-8"
                 >
                   {plan.buttonText}
-                </motion.button>
+                </CalButton>
 
                 <h4 className="text-lg font-semibold text-white mb-6">Qué incluye:</h4>
 
@@ -333,22 +321,13 @@ export default function Pricing() {
             <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
               Agenda una consulta gratuita y descubre cómo podemos crear una solución personalizada para tus necesidades específicas
             </p>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => {
-                // @ts-ignore
-                if (window.Calendly) {
-                  // @ts-ignore
-                  window.Calendly.initPopupWidget({
-                    url: 'https://calendly.com/clientia/llamada-asistente-profesional-marketing'
-                  });
-                }
-              }}
-              className="bg-white text-black px-10 py-5 rounded-full text-lg font-semibold hover:shadow-lg hover:shadow-white/20 transition-all"
+            <CalButton
+              variant="white"
+              size="large"
+              className="font-semibold"
             >
               Agenda una Consulta Gratis
-            </motion.button>
+            </CalButton>
             <p className="text-gray-400 mt-6">
               Sin compromisos. Sin presión de ventas. Solo una conversación sobre tus necesidades.
             </p>

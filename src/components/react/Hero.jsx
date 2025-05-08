@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
+import CalButton from './CalButton';
 
 const comparisonData = [
   {
@@ -145,24 +146,12 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.5 }}
               className="flex flex-wrap gap-4 mb-12"
             >
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-purple-600 to-indigo-600
-                         text-white px-8 py-4 rounded-full text-lg font-medium
-                         hover:shadow-lg hover:shadow-purple-500/30 transition-all"
-                onClick={() => {
-                  // @ts-ignore
-                  if (window.Calendly) {
-                    // @ts-ignore
-                    window.Calendly.initPopupWidget({
-                      url: 'https://calendly.com/clientia/llamada-asistente-profesional-marketing'
-                    });
-                  }
-                }}
+              <CalButton
+                variant="primary"
+                size="large"
               >
                 Agenda una Consulta Gratis
-              </motion.button>
+              </CalButton>
               <a
                 href="#precios"
                 className="bg-white/10 backdrop-blur-sm border border-white/20

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import CalButton from './CalButton';
 
 const cases = [
   {
@@ -243,22 +244,13 @@ export default function SuccessStories() {
             <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
               Agenda una consulta gratuita y descubre cómo podemos ayudarte a transformar tu empresa con IA
             </p>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => {
-                // @ts-ignore
-                if (window.Calendly) {
-                  // @ts-ignore
-                  window.Calendly.initPopupWidget({
-                    url: 'https://calendly.com/clientia/llamada-asistente-profesional-marketing'
-                  });
-                }
-              }}
-              className="bg-white text-black px-10 py-5 rounded-full text-lg font-semibold hover:shadow-lg hover:shadow-white/20 transition-all"
+            <CalButton
+              variant="white"
+              size="large"
+              className="font-semibold"
             >
               Agenda una Consulta Gratis
-            </motion.button>
+            </CalButton>
           </div>
         </motion.div>
       </div>
