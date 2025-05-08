@@ -1,20 +1,45 @@
 ---
 interface Props {
 	title: string;
+	description?: string;
 }
 
-const { title } = Astro.props;
+const {
+	title,
+	description = "Asistentes de IA y Desarrollo de Plataformas SAAS para potenciar tu empresa con tecnologías de vanguardia. Soluciones de IA personalizadas con ROI garantizado."
+} = Astro.props;
+
+// URL canónica
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://asistentesdeia.cl').toString();
 ---
 
 <!doctype html>
 <html lang="es" class="scroll-smooth">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Asistentes de IA y Desarrollo de Plataformas SAAS para potenciar tu empresa con tecnologías de vanguardia" />
+		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/png" href="/favicon.png" />
 		<meta name="generator" content={Astro.generator} />
+
+		<!-- SEO Metatags -->
 		<title>{title}</title>
+		<link rel="canonical" href={canonicalURL} />
+		<meta name="robots" content="index, follow" />
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={canonicalURL} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content="https://asistentesdeia.cl/og-image.png" />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={canonicalURL} />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content="https://asistentesdeia.cl/og-image.png" />
 
 		<!-- Botpress Integration -->
 		<script is:inline define:vars={{ botpressToken: "P10XAEM5" }}>
