@@ -4,9 +4,9 @@ import { useState } from 'react';
 const PrivacyPolicy = () => (
   <div className="text-gray-300 space-y-6">
     <h2 className="text-2xl font-bold text-white mb-6">Política de Privacidad</h2>
-    
+
     <div>
-      <p className="mb-4">Última actualización: Enero 2025</p>
+      <p className="mb-4">Última actualización: Enero 2024</p>
       <p>En Asistentes de IA, nos tomamos muy en serio la protección de sus datos personales. Esta política de privacidad describe detalladamente nuestras prácticas de recopilación, uso, protección y divulgación de su información cuando utiliza nuestros servicios.</p>
     </div>
 
@@ -23,7 +23,7 @@ const PrivacyPolicy = () => (
             <li>Preferencias de configuración de servicios</li>
           </ul>
         </div>
-        
+
         <div>
           <h4 className="text-lg font-medium text-white">1.2 Información recopilada automáticamente:</h4>
           <ul className="list-disc pl-6 space-y-2">
@@ -154,9 +154,9 @@ const PrivacyPolicy = () => (
 const TermsOfService = () => (
   <div className="text-gray-300 space-y-6">
     <h2 className="text-2xl font-bold text-white mb-6">Términos de Servicio</h2>
-    
+
     <div>
-      <p className="mb-4">Última actualización: Enero 2025</p>
+      <p className="mb-4">Última actualización: Enero 2024</p>
       <p>Este acuerdo establece los términos y condiciones para el uso de los servicios proporcionados por Asistentes de IA. Al acceder o utilizar nuestros servicios, usted acepta estar legalmente vinculado por estos términos.</p>
     </div>
 
@@ -375,7 +375,7 @@ export default function Footer() {
               Asistentes de IA
             </h3>
             <p className="text-gray-300 mb-6 max-w-md">
-              Transformamos empresas con asistentes virtuales inteligentes. 
+              Transformamos empresas con soluciones de asistentes virtuales inteligentes.
               Automatización, eficiencia y atención 24/7 para tu negocio.
             </p>
             <div className="flex space-x-4">
@@ -402,8 +402,8 @@ export default function Footer() {
             <h4 className="text-lg font-semibold text-white mb-4">Enlaces Rápidos</h4>
             <ul className="space-y-2">
               <li>
-                <a 
-                  href="#servicios" 
+                <a
+                  href="#servicios"
                   className="text-gray-300 hover:text-white transition-colors"
                   onClick={(e) => handleNavClick(e, 'servicios')}
                 >
@@ -411,8 +411,8 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a 
-                  href="#industrias" 
+                <a
+                  href="#industrias"
                   className="text-gray-300 hover:text-white transition-colors"
                   onClick={(e) => handleNavClick(e, 'industrias')}
                 >
@@ -420,17 +420,17 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a 
-                  href="#precios" 
+                <a
+                  href="#precios"
                   className="text-gray-300 hover:text-white transition-colors"
                   onClick={(e) => handleNavClick(e, 'precios')}
                 >
-                  Precios
+                  Planes
                 </a>
               </li>
               <li>
-                <a 
-                  href="#casos-exito" 
+                <a
+                  href="#casos-exito"
                   className="text-gray-300 hover:text-white transition-colors"
                   onClick={(e) => handleNavClick(e, 'casos-exito')}
                 >
@@ -464,14 +464,14 @@ export default function Footer() {
               © 2025 Asistentes de IA. Todos los derechos reservados.
             </p>
             <div className="flex space-x-6">
-              <button 
-                onClick={() => setShowPrivacy(true)} 
+              <button
+                onClick={() => setShowPrivacy(true)}
                 className="text-gray-400 hover:text-white text-sm transition-colors"
               >
                 Política de Privacidad
               </button>
-              <button 
-                onClick={() => setShowTerms(true)} 
+              <button
+                onClick={() => setShowTerms(true)}
                 className="text-gray-400 hover:text-white text-sm transition-colors"
               >
                 Términos de Servicio
@@ -491,4 +491,4 @@ export default function Footer() {
       </Modal>
     </footer>
   );
-} 
+}

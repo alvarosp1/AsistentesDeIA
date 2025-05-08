@@ -69,12 +69,12 @@ const metrics = [
     )
   },
   {
-    value: "+500",
-    label: "Empresas Confían en Nosotros",
+    value: "3.7x",
+    label: "ROI Promedio",
     icon: (
       <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M16 2V5M8 2V5M3 8H21M19 4H5C3.89543 4 3 4.89543 3 6V19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19V6C21 4.89543 20.1046 4 19 4Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M8 11H8.01M12 11H12.01M16 11H16.01M8 15H8.01M12 15H12.01M16 15H16.01" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M12 8V16M12 16L16 12M12 16L8 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>
     )
   }
@@ -105,11 +105,11 @@ export default function SuccessStories() {
           </div>
 
           <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
-            Empresas que <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-400">transformaron</span> su operación
+            Casos de <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-400">Éxito</span> con IA
           </h2>
 
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Descubre cómo nuestros asistentes de IA han ayudado a empresas de diversos sectores a alcanzar sus objetivos
+            Ejemplos de cómo la inteligencia artificial puede transformar operaciones y generar resultados medibles
           </p>
         </motion.div>
 

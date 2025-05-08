@@ -339,12 +339,12 @@ const conversations: { title: string; messages: Message[] }[] = [
     messages: [
       {
         id: 1,
-        text: "Estoy preocupado por las ventas del local del Centro, ¿puedes revisar qué está pasando?",
+        text: "Estoy preocupado por las ventas del local del Centro, ¿puedes revisar qué está pasando? Los números de este mes parecen estar por debajo de lo esperado.",
         sender: 'user'
       },
       {
         id: 2,
-        text: "He analizado los datos de ventas de la última semana y he detectado una caída significativa los días martes y jueves. Aquí puedes ver el patrón:",
+        text: "He analizado los datos de ventas de la última semana y he detectado una caída significativa los días martes y jueves. Aquí puedes ver el patrón. También he comparado con el mismo período del año pasado y hay una disminución del 12% en general, pero concentrada principalmente en estos dos días específicos.",
         sender: 'ai',
         references: [
           {
@@ -362,12 +362,32 @@ const conversations: { title: string; messages: Message[] }[] = [
       },
       {
         id: 3,
-        text: "¿Qué podemos hacer para mejorar esos días?",
+        text: "¿Qué podemos hacer para mejorar esos días? ¿Hay alguna razón específica para esta caída?",
         sender: 'user'
       },
       {
         id: 4,
-        text: "Basado en el análisis de tráfico y el historial de ventas, recomiendo: 1) Implementar 'Martes de Descuento' con 15% en calzado deportivo, que es nuestra categoría más fuerte, 2) Programar los nuevos lanzamientos para los jueves, ya que históricamente aumentan el tráfico en un 40%. ¿Quieres que prepare la campaña?",
+        text: "He identificado varias causas probables. Primero, hay dos nuevos competidores que abrieron recientemente en el centro comercial cercano y ofrecen promociones especiales los martes. Segundo, el tráfico peatonal en la zona ha disminuido un 15% según datos de Google Maps. Tercero, no hemos renovado nuestro inventario de productos estrella en las últimas 3 semanas.",
+        sender: 'ai'
+      },
+      {
+        id: 5,
+        text: "Entiendo. ¿Qué estrategias específicas recomiendas implementar?",
+        sender: 'user'
+      },
+      {
+        id: 6,
+        text: "Basado en el análisis de tráfico y el historial de ventas, recomiendo: 1) Implementar 'Martes de Descuento' con 15% en calzado deportivo, que es nuestra categoría más fuerte, 2) Programar los nuevos lanzamientos para los jueves, ya que históricamente aumentan el tráfico en un 40%, 3) Crear una campaña de remarketing dirigida específicamente a clientes que no han comprado en los últimos 30 días con un cupón especial para usar martes o jueves, 4) Actualizar la vitrina principal con los nuevos modelos que llegaron al almacén la semana pasada.",
+        sender: 'ai'
+      },
+      {
+        id: 7,
+        text: "Me gusta la idea. ¿Podrías preparar la campaña de 'Martes de Descuento' para implementarla la próxima semana? También necesitaría un presupuesto estimado.",
+        sender: 'user'
+      },
+      {
+        id: 8,
+        text: "Por supuesto. He preparado un borrador de la campaña 'Martes de Descuento' con todos los elementos necesarios. El presupuesto estimado es de $350.000 para marketing digital, material POP y capacitación del personal. Según mis proyecciones, esto generaría un aumento del 25-30% en ventas los martes, con un ROI estimado de 2.8x en el primer mes. ¿Procedo con la implementación para el próximo martes?",
         sender: 'ai'
       }
     ]
@@ -377,12 +397,12 @@ const conversations: { title: string; messages: Message[] }[] = [
     messages: [
       {
         id: 1,
-        text: "Necesitamos preparar la estrategia para Black Friday, ¿qué sugieres?",
+        text: "Necesitamos preparar la estrategia para Black Friday, ¿qué sugieres? Este año queremos superar los resultados del año pasado y diferenciarnos de la competencia.",
         sender: 'user'
       },
       {
         id: 2,
-        text: "He analizado el inventario actual y el histórico de ventas del año pasado. Aquí está el análisis de productos y descuentos sugeridos:",
+        text: "He analizado el inventario actual y el histórico de ventas del año pasado. Aquí está el análisis de productos y descuentos sugeridos. He identificado las categorías con mayor potencial basado en tendencias actuales y comportamiento de búsqueda en Google:",
         sender: 'ai',
         references: [
           {
@@ -400,7 +420,37 @@ const conversations: { title: string; messages: Message[] }[] = [
       },
       {
         id: 3,
-        text: "Los descuentos están basados en: 1) Nivel actual de stock, 2) Tendencias de búsqueda en redes sociales, 3) Margen de ganancia por producto. ¿Procedo a configurar la campaña en el sistema?",
+        text: "Los descuentos están basados en: 1) Nivel actual de stock, 2) Tendencias de búsqueda en redes sociales, 3) Margen de ganancia por producto. También he analizado las estrategias de los principales competidores para asegurar que nuestras ofertas sean más atractivas.",
+        sender: 'ai'
+      },
+      {
+        id: 4,
+        text: "Me parece bien el enfoque. ¿Qué canales de marketing recomiendas priorizar este año? El año pasado invertimos principalmente en Google Ads.",
+        sender: 'user'
+      },
+      {
+        id: 5,
+        text: "Basado en el análisis de conversión del año pasado y las tendencias actuales, recomiendo la siguiente distribución de presupuesto: 40% en Instagram y Facebook Ads (enfocado en video y carrusel), 25% en Google Ads, 20% en influencers estratégicos con audiencias alineadas a nuestros productos, y 15% en email marketing segmentado por comportamiento de compra previo. Los datos muestran que Instagram tiene un 27% mejor ROI que Google Ads para nuestras categorías principales.",
+        sender: 'ai'
+      },
+      {
+        id: 6,
+        text: "Interesante. ¿Y qué estrategia de timing sugieres? ¿Deberíamos empezar antes o concentrarnos solo en el día?",
+        sender: 'user'
+      },
+      {
+        id: 7,
+        text: "Recomiendo una estrategia escalonada en tres fases: 1) Pre-Black Friday (10 días antes): Campaña de anticipación con acceso exclusivo para suscriptores y clientes frecuentes, 2) Black Friday Weekend (viernes a domingo): Descuentos principales en todas las categorías con ofertas relámpago cada 3 horas, 3) Cyber Monday: Enfoque en productos tecnológicos y últimas unidades con descuentos adicionales. Esta estrategia generó un 34% más de ventas en casos similares al extender el período de compra.",
+        sender: 'ai'
+      },
+      {
+        id: 8,
+        text: "Me gusta mucho esta estrategia. ¿Podrías preparar un calendario detallado con las acciones específicas para cada fase?",
+        sender: 'user'
+      },
+      {
+        id: 9,
+        text: "He preparado el calendario detallado con todas las acciones para las tres fases. Incluye fechas exactas, creatividades necesarias, copy sugerido para cada plataforma, programación de emails, y configuración de ofertas relámpago. También he incluido un plan de contingencia en caso de que la competencia lance ofertas agresivas durante nuestra campaña. ¿Procedo a configurar la campaña en el sistema y coordinar con el equipo creativo para la producción de materiales?",
         sender: 'ai'
       }
     ]
@@ -410,12 +460,12 @@ const conversations: { title: string; messages: Message[] }[] = [
     messages: [
       {
         id: 1,
-        text: "Necesito una forma de medir y comparar el rendimiento de los vendedores, ¿qué propones?",
+        text: "Necesito una forma de medir y comparar el rendimiento de los vendedores, ¿qué propones? Actualmente solo medimos el volumen de ventas, pero creo que hay más factores a considerar.",
         sender: 'user'
       },
       {
         id: 2,
-        text: "He creado un dashboard de rendimiento que integra múltiples métricas. Aquí tienes una vista preliminar:",
+        text: "Tienes razón, medir solo el volumen de ventas puede llevar a prácticas que no favorecen la experiencia del cliente o la rentabilidad a largo plazo. He creado un dashboard de rendimiento que integra múltiples métricas balanceadas. Aquí tienes una vista preliminar:",
         sender: 'ai',
         references: [
           {
@@ -433,7 +483,37 @@ const conversations: { title: string; messages: Message[] }[] = [
       },
       {
         id: 3,
-        text: "Las métricas clave son: 1) Ventas totales, 2) NPS de clientes atendidos, 3) Tasa de conversión. ¿Te gustaría que configure reportes automáticos semanales con estas métricas?",
+        text: "Las métricas clave son: 1) Ventas totales, 2) NPS de clientes atendidos, 3) Tasa de conversión. Este enfoque equilibrado permite identificar diferentes perfiles de vendedores y valorar distintas fortalezas.",
+        sender: 'ai'
+      },
+      {
+        id: 4,
+        text: "Me gusta este enfoque. ¿Cómo podríamos implementarlo sin que los vendedores sientan que están siendo microcontrolados?",
+        sender: 'user'
+      },
+      {
+        id: 5,
+        text: "Excelente punto. Recomiendo implementarlo como un programa de desarrollo profesional en lugar de un sistema punitivo. Podemos: 1) Realizar una reunión de lanzamiento explicando cómo estas métricas ayudan al crecimiento profesional, 2) Establecer metas personalizadas para cada vendedor basadas en sus fortalezas, 3) Crear un sistema de reconocimiento que premie diferentes tipos de logros, no solo ventas, 4) Ofrecer capacitación específica basada en áreas de mejora identificadas.",
+        sender: 'ai'
+      },
+      {
+        id: 6,
+        text: "¿Y cómo podríamos recolectar el NPS de manera efectiva sin molestar a los clientes?",
+        sender: 'user'
+      },
+      {
+        id: 7,
+        text: "Podemos implementar varias estrategias no intrusivas: 1) Encuestas por SMS/email automatizadas 24 horas después de la compra (con una tasa de respuesta promedio del 22%), 2) Terminales de feedback rápido al salir de la tienda (sistema de 3 botones), 3) Códigos QR en el recibo que dirijan a una encuesta breve con incentivo de descuento en próxima compra, 4) Integración con el programa de fidelidad para recopilar feedback a cambio de puntos adicionales. Estas estrategias combinadas pueden darnos una cobertura del 45-60% de las transacciones.",
+        sender: 'ai'
+      },
+      {
+        id: 8,
+        text: "Perfecto. ¿Podrías configurar reportes automáticos semanales con estas métricas y un plan de implementación gradual?",
+        sender: 'user'
+      },
+      {
+        id: 9,
+        text: "He configurado los reportes automáticos semanales que se enviarán cada lunes a las 8:00 AM a los gerentes y cada vendedor recibirá su reporte personalizado. También he preparado un plan de implementación en 3 fases durante 6 semanas: Fase 1 (semanas 1-2): Comunicación y capacitación, Fase 2 (semanas 3-4): Implementación de recolección de datos y ajustes, Fase 3 (semanas 5-6): Lanzamiento completo del sistema de reconocimiento. ¿Te gustaría revisar el plan detallado y el calendario de implementación?",
         sender: 'ai'
       }
     ]
@@ -443,12 +523,12 @@ const conversations: { title: string; messages: Message[] }[] = [
     messages: [
       {
         id: 1,
-        text: "¿Cómo van los tiempos de entrega este mes?",
+        text: "¿Cómo van los tiempos de entrega este mes? Hemos recibido algunas quejas de clientes sobre retrasos.",
         sender: 'user'
       },
       {
         id: 2,
-        text: "Este mes tuvimos retrasos significativos durante la semana del 4 y del 15 ①. He analizado las causas y preparado un plan de acción.",
+        text: "He analizado los datos de entregas de este mes y efectivamente hemos tenido problemas. Este mes tuvimos retrasos significativos durante la semana del 4 y del 15. El tiempo promedio de entrega aumentó de 1.8 días a 2.7 días, lo que representa un incremento del 50% respecto a nuestro estándar.",
         sender: 'ai',
         references: [
           {
@@ -460,7 +540,7 @@ const conversations: { title: string; messages: Message[] }[] = [
       },
       {
         id: 3,
-        text: "Los retrasos se deben principalmente a: 1) Saturación en el centro de distribución sur (65% de casos) ②, 2) Rutas no optimizadas (35% de casos) ③. Ya he redistribuido las rutas y ajustado los horarios de picking. ¿Autorizo los cambios?",
+        text: "Los retrasos se deben principalmente a: 1) Saturación en el centro de distribución sur (65% de casos), 2) Rutas no optimizadas (35% de casos). El centro sur está procesando un 27% más de pedidos que su capacidad diseñada debido al crecimiento en esa zona.",
         sender: 'ai',
         references: [
           {
@@ -474,6 +554,36 @@ const conversations: { title: string; messages: Message[] }[] = [
             title: 'Análisis_CD_Sur_Oct2023.xlsx'
           }
         ]
+      },
+      {
+        id: 4,
+        text: "¿Qué soluciones propones para resolver estos problemas rápidamente?",
+        sender: 'user'
+      },
+      {
+        id: 5,
+        text: "He desarrollado un plan de acción en dos fases. Soluciones inmediatas (1-7 días): 1) Redistribución de 35% de los pedidos del centro sur al centro este que está operando al 70% de capacidad, 2) Optimización de rutas con nuevo algoritmo que reduce tiempos de trayecto en 22%, 3) Implementación de turnos adicionales temporales en horarios pico. Soluciones a mediano plazo (30-60 días): 1) Ampliación del centro sur con 4 nuevas estaciones de picking, 2) Contratación de 6 operarios adicionales, 3) Implementación de sistema predictivo de demanda por zonas.",
+        sender: 'ai'
+      },
+      {
+        id: 6,
+        text: "Me parece bien. ¿Cuál sería el impacto esperado de las soluciones inmediatas y qué recursos necesitamos?",
+        sender: 'user'
+      },
+      {
+        id: 7,
+        text: "Con las soluciones inmediatas, proyectamos reducir el tiempo promedio de entrega a 2.1 días en la primera semana y volver al estándar de 1.8 días en la segunda semana. Esto representaría una mejora del 22% en 7 días. Los recursos necesarios son: 1) Configuración del sistema de ruteo: 4 horas de trabajo del equipo de TI, 2) Coordinación logística entre centros: 2 supervisores durante 3 días, 3) Turnos adicionales: $1.2M en horas extras durante 2 semanas. El ROI estimado es positivo considerando que cada día de retraso nos cuesta aproximadamente $350.000 en compensaciones y pérdida de clientes.",
+        sender: 'ai'
+      },
+      {
+        id: 8,
+        text: "Excelente análisis. ¿Ya has redistribuido las rutas y ajustado los horarios de picking? ¿Autorizo los cambios y el presupuesto para las horas extras?",
+        sender: 'user'
+      },
+      {
+        id: 9,
+        text: "He preparado todos los cambios en el sistema y están listos para implementarse. Las nuevas rutas están optimizadas y los horarios de picking ajustados para maximizar la eficiencia. Solo necesito tu autorización para activar los cambios y aprobar el presupuesto de $1.2M para las horas extras durante las próximas 2 semanas. Una vez implementado, recibirás reportes diarios de seguimiento con los KPIs de tiempos de entrega y nivel de servicio. ¿Procedo con la implementación?",
+        sender: 'ai'
       }
     ]
   },
@@ -482,12 +592,12 @@ const conversations: { title: string; messages: Message[] }[] = [
     messages: [
       {
         id: 1,
-        text: "Necesito organizar mejor la comunicación con clientes, hay muchos canales y es difícil dar seguimiento.",
+        text: "Necesito organizar mejor la comunicación con clientes, hay muchos canales y es difícil dar seguimiento. Estamos perdiendo consultas y los tiempos de respuesta son muy variables.",
         sender: 'user'
       },
       {
         id: 2,
-        text: "He analizado tus canales de comunicación y he creado un dashboard unificado. Aquí puedes ver el estado actual:",
+        text: "Entiendo el desafío. He analizado todos tus canales de comunicación (email, teléfono, WhatsApp, redes sociales y chat web) y he creado un dashboard unificado que centraliza todas las interacciones. Aquí puedes ver el estado actual de las comunicaciones:",
         sender: 'ai',
         references: [
           {
@@ -505,7 +615,37 @@ const conversations: { title: string; messages: Message[] }[] = [
       },
       {
         id: 3,
-        text: "He identificado que: 1) El 45% de las consultas son por email, 2) Las llamadas tienen prioridad alta pero tardan más en resolverse, 3) WhatsApp tiene la mejor tasa de respuesta. ¿Quieres que configure respuestas automáticas personalizadas para cada canal?",
+        text: "He identificado varios patrones importantes: 1) El 45% de las consultas son por email, pero tienen el tiempo de respuesta más largo (promedio 8 horas), 2) Las llamadas tienen prioridad alta pero tardan más en resolverse completamente (promedio 2.3 interacciones), 3) WhatsApp tiene la mejor tasa de respuesta (92%) y satisfacción del cliente (4.7/5), 4) El 23% de las consultas se repiten en múltiples canales cuando no reciben respuesta rápida.",
+        sender: 'ai'
+      },
+      {
+        id: 4,
+        text: "Interesante análisis. ¿Qué solución propones para unificar todo y mejorar los tiempos de respuesta?",
+        sender: 'user'
+      },
+      {
+        id: 5,
+        text: "Propongo implementar un sistema omnicanal integrado con estas características: 1) Bandeja de entrada unificada que centralice todos los canales con vista de cliente 360°, 2) Sistema de priorización automática basado en urgencia, valor del cliente y tiempo de espera, 3) Asignación inteligente a agentes según especialidad y carga de trabajo, 4) Respuestas automáticas personalizadas para consultas frecuentes en cada canal, 5) Seguimiento automático de casos no resueltos con escalamiento.",
+        sender: 'ai'
+      },
+      {
+        id: 6,
+        text: "Suena bien. ¿Qué tan compleja sería la implementación y cuánto tiempo tomaría?",
+        sender: 'user'
+      },
+      {
+        id: 7,
+        text: "La implementación puede realizarse en fases para minimizar la disrupción. Fase 1 (1-2 semanas): Integración de canales y creación del dashboard unificado. Fase 2 (semana 3): Configuración de respuestas automáticas y reglas de asignación. Fase 3 (semanas 4-5): Implementación de análisis avanzado y optimización. La complejidad técnica es media, ya que utilizaremos APIs existentes de tus sistemas actuales. Requerirá aproximadamente 40 horas de configuración y 15 horas de capacitación para el equipo.",
+        sender: 'ai'
+      },
+      {
+        id: 8,
+        text: "¿Podrías configurar primero las respuestas automáticas personalizadas para cada canal? Eso nos daría un alivio inmediato mientras implementamos el resto.",
+        sender: 'user'
+      },
+      {
+        id: 9,
+        text: "Absolutamente. He analizado las 50 consultas más frecuentes y he preparado respuestas personalizadas para cada canal, adaptadas al formato y tono apropiado para cada medio. Para email, he creado 15 plantillas con variables dinámicas que se personalizan según el cliente. Para WhatsApp, he configurado 20 respuestas rápidas con opciones interactivas. Para el chat web, he implementado un árbol de decisión con 25 escenarios comunes. Estas respuestas automáticas pueden manejar aproximadamente el 65% de las consultas entrantes, liberando a tu equipo para casos más complejos. ¿Procedo con la implementación de estas respuestas automáticas mientras preparamos el sistema completo?",
         sender: 'ai'
       }
     ]
@@ -515,12 +655,12 @@ const conversations: { title: string; messages: Message[] }[] = [
     messages: [
       {
         id: 1,
-        text: "¿Cómo podemos mejorar el manejo de reclamos y quejas de clientes?",
+        text: "¿Cómo podemos mejorar el manejo de reclamos y quejas de clientes? Últimamente hemos tenido un aumento en las quejas y nuestro proceso actual es muy manual.",
         sender: 'user'
       },
       {
         id: 2,
-        text: "He implementado un sistema de seguimiento en tiempo real. Aquí está el estado actual de los casos:",
+        text: "Después de analizar tu proceso actual de manejo de reclamos, he identificado varias áreas de mejora. He implementado un sistema de seguimiento en tiempo real que centraliza todos los reclamos y permite una gestión más eficiente. Aquí está el estado actual de los casos:",
         sender: 'ai',
         references: [
           {
@@ -538,7 +678,42 @@ const conversations: { title: string; messages: Message[] }[] = [
       },
       {
         id: 3,
-        text: "Basado en el análisis: 1) Hemos reducido el tiempo de respuesta un 35%, 2) Los casos urgentes se resuelven en <3 horas, 3) La satisfacción post-reclamo aumentó al 92%. ¿Implemento el sistema de alertas automáticas para casos prioritarios?",
+        text: "El análisis de los últimos 3 meses muestra que: 1) El 42% de los reclamos están relacionados con retrasos en entregas, 2) El 28% con productos defectuosos, 3) El 18% con cobros incorrectos, y 4) El 12% con problemas de atención al cliente. El tiempo promedio de resolución era de 72 horas, muy por encima del estándar de la industria.",
+        sender: 'ai'
+      },
+      {
+        id: 4,
+        text: "¿Qué mejoras has implementado y cuáles han sido los resultados hasta ahora?",
+        sender: 'user'
+      },
+      {
+        id: 5,
+        text: "He implementado varias mejoras clave: 1) Sistema de categorización automática de reclamos por urgencia y tipo, 2) Flujos de trabajo predefinidos para cada tipo de reclamo, 3) Asignación automática a especialistas según la naturaleza del problema, 4) Plantillas de respuesta personalizadas, 5) Sistema de escalamiento automático para casos sin resolver en tiempos objetivo, 6) Seguimiento post-resolución para verificar satisfacción.",
+        sender: 'ai'
+      },
+      {
+        id: 6,
+        text: "Los resultados iniciales son muy positivos: 1) Hemos reducido el tiempo de respuesta inicial un 35% (de 8 horas a 5.2 horas), 2) Los casos urgentes ahora se resuelven en menos de 3 horas (antes 12 horas), 3) La satisfacción post-reclamo aumentó del 67% al 92%, 4) La tasa de escalamiento a gerencia disminuyó un 45%.",
+        sender: 'ai'
+      },
+      {
+        id: 7,
+        text: "Estos resultados son impresionantes. ¿Qué más podríamos implementar para seguir mejorando?",
+        sender: 'user'
+      },
+      {
+        id: 8,
+        text: "Para llevar nuestro sistema al siguiente nivel, recomiendo: 1) Implementar un sistema de alertas automáticas para casos prioritarios que notifique en tiempo real a los responsables, 2) Desarrollar un módulo de análisis predictivo que identifique patrones y anticipe problemas recurrentes, 3) Crear un programa de 'recuperación de clientes' para casos graves con beneficios especiales, 4) Implementar un sistema de feedback continuo que alimente directamente a las áreas operativas para prevenir futuros reclamos.",
+        sender: 'ai'
+      },
+      {
+        id: 9,
+        text: "Me gusta especialmente la idea del sistema de alertas y el análisis predictivo. ¿Podemos implementar eso primero?",
+        sender: 'user'
+      },
+      {
+        id: 10,
+        text: "Absolutamente. He preparado la configuración del sistema de alertas automáticas que funcionará así: 1) Notificaciones en tiempo real vía SMS y email a los responsables según el tipo y urgencia del reclamo, 2) Escalamiento automático si no hay respuesta en 30 minutos para casos urgentes, 3) Dashboard en tiempo real para gerencia con KPIs de resolución, 4) Reportes automáticos diarios con casos pendientes y en riesgo. El módulo de análisis predictivo utilizará los datos históricos para identificar patrones y tendencias, permitiendo intervenciones proactivas antes de que surjan problemas. ¿Procedo con la implementación de estas dos funcionalidades prioritarias?",
         sender: 'ai'
       }
     ]

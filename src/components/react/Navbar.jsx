@@ -17,7 +17,9 @@ export default function Navbar() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
     }
-    const element = document.getElementById(item.toLowerCase());
+
+    const targetId = item === 'Planes' ? 'precios' : item.toLowerCase();
+    const element = document.getElementById(targetId);
     if (element) {
       const navHeight = 80; // altura aproximada del navbar
       const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
@@ -33,8 +35,8 @@ export default function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-gray-900/80 backdrop-blur-lg border-b border-purple-500/20' 
+        isScrolled
+          ? 'bg-gray-900/80 backdrop-blur-lg border-b border-purple-500/20'
           : 'bg-transparent'
       }`}
     >
@@ -49,10 +51,10 @@ export default function Navbar() {
           </motion.div>
 
           <div className="hidden md:flex items-center space-x-8">
-            {['Inicio', 'Servicios', 'Industrias', 'Precios'].map((item) => (
+            {['Inicio', 'Servicios', 'Industrias', 'Planes'].map((item) => (
               <motion.a
                 key={item}
-                href={item === 'Inicio' ? '/' : `#${item.toLowerCase()}`}
+                href={item === 'Inicio' ? '/' : item === 'Planes' ? '#precios' : `#${item.toLowerCase()}`}
                 onClick={(e) => handleNavClick(e, item)}
                 className="text-gray-300 hover:text-white transition-colors"
                 whileHover={{ scale: 1.05 }}
@@ -66,7 +68,7 @@ export default function Navbar() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-gradient-to-r from-purple-500 to-indigo-500 
+            className="bg-gradient-to-r from-purple-500 to-indigo-500
                      text-white px-6 py-2 rounded-full text-sm font-medium
                      hover:shadow-lg hover:shadow-purple-500/30 transition-shadow"
             onClick={() => {
@@ -85,4 +87,4 @@ export default function Navbar() {
       </div>
     </motion.nav>
   );
-} 
+}

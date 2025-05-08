@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import CalendarEmbed from './CalendarEmbed';
 
 // Preguntas frecuentes sobre precios
 const pricingFaqs = [
@@ -44,7 +45,7 @@ const plans = [
     gradient: "from-purple-600 to-indigo-600",
     bgGradient: "from-purple-600/10 to-indigo-600/10",
     borderGradient: "border-purple-500/30",
-    buttonText: "Contactar",
+    buttonText: "Contactar Ventas",
     callToAction: "Ideal para empresas que inician su transformación con IA"
   },
   {
@@ -70,7 +71,7 @@ const plans = [
     gradient: "from-indigo-600 to-blue-600",
     bgGradient: "from-indigo-600/10 to-blue-600/10",
     borderGradient: "border-indigo-500/30",
-    buttonText: "Contactar",
+    buttonText: "Contactar Ventas",
     callToAction: "Ideal para empresas que buscan implementación completa"
   },
   {
@@ -109,20 +110,20 @@ export default function Pricing() {
 
   // Componente para las características del plan
   const FeatureList = ({ items, planName }) => (
-    <div className="space-y-6">
+    <div className="space-y-4">
       {items.map((feature, i) => (
-        <div key={i} className="flex items-start gap-4 relative group">
-          <span className="text-white mt-0.5 flex-shrink-0">
-            <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div key={i} className="flex items-start gap-2 relative group">
+          <span className="text-indigo-400 mt-0.5 flex-shrink-0">
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.5" />
               <path d="M8 12L11 15L16 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </span>
-          <span className="text-gray-300 text-lg">
+          <span className="text-gray-300 text-sm">
             {feature.text}
             {feature.hasInfo && (
               <button
-                className="ml-2 inline-flex items-center justify-center w-5 h-5 rounded-full bg-gray-700 hover:bg-gray-600 text-xs text-white font-semibold cursor-help transition-colors"
+                className="ml-2 inline-flex items-center justify-center w-4 h-4 rounded-full bg-gray-700 hover:bg-gray-600 text-xs text-white font-semibold cursor-help transition-colors"
                 onMouseEnter={() => setActiveTooltip(planName + i)}
                 onMouseLeave={() => setActiveTooltip(null)}
               >
@@ -131,7 +132,7 @@ export default function Pricing() {
             )}
           </span>
           {feature.tooltip && activeTooltip === planName + i && (
-            <div className="absolute bottom-full left-8 mb-2 w-80 p-4 bg-gray-800 rounded-xl shadow-xl border border-gray-700 text-sm text-gray-300 z-50">
+            <div className="absolute bottom-full left-8 mb-2 w-64 p-3 bg-gray-800 rounded-xl shadow-xl border border-gray-700 text-xs text-gray-300 z-50">
               {feature.tooltip}
               <div className="absolute -bottom-2 left-4 w-4 h-4 bg-gray-800 border-r border-b border-gray-700 transform rotate-45"></div>
             </div>
@@ -142,12 +143,13 @@ export default function Pricing() {
   );
 
   return (
-    <section className="py-24 bg-black relative overflow-hidden" id="servicios">
+    <section className="py-24 bg-gradient-to-b from-black to-gray-900 relative overflow-hidden" id="precios">
       {/* Elementos decorativos de fondo */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute w-[60rem] h-[60rem] -top-40 -left-40 bg-indigo-900/10 rounded-full blur-3xl"></div>
-        <div className="absolute w-[50rem] h-[50rem] bottom-0 right-1/3 bg-purple-900/10 rounded-full blur-3xl"></div>
-        <div className="absolute w-full h-px top-0 left-0 bg-gradient-to-r from-transparent via-gray-800 to-transparent"></div>
+        <div className="absolute w-[70rem] h-[70rem] -top-40 -left-40 bg-indigo-900/10 rounded-full blur-3xl"></div>
+        <div className="absolute w-[60rem] h-[60rem] bottom-0 right-1/3 bg-purple-900/10 rounded-full blur-3xl"></div>
+        <div className="absolute w-[40rem] h-[40rem] top-1/3 right-0 bg-blue-900/10 rounded-full blur-3xl"></div>
+        <div className="absolute w-full h-px top-0 left-0 bg-gradient-to-r from-transparent via-indigo-800/30 to-transparent"></div>
       </div>
 
       <div className="container mx-auto px-4 relative">
@@ -156,10 +158,14 @@ export default function Pricing() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-20"
+          className="text-center mb-16"
         >
-          <h2 className="text-5xl md:text-6xl font-bold text-white mb-8">
-            Nuestros <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-400">Servicios</span>
+          <div className="inline-block px-4 py-1 rounded-full bg-gradient-to-r from-purple-500/20 to-indigo-500/20 border border-purple-500/30 text-purple-300 text-sm font-medium mb-6">
+            Planes flexibles para cada necesidad
+          </div>
+
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            Elige el <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-400">Plan</span> que mejor se adapte a tu empresa
           </h2>
 
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -168,7 +174,7 @@ export default function Pricing() {
         </motion.div>
 
         {/* Planes */}
-        <div className="grid md:grid-cols-2 gap-8 mb-24">
+        <div className="grid md:grid-cols-3 gap-6 mb-24 max-w-6xl mx-auto">
           {plans.map((plan, index) => (
             <motion.div
               key={plan.name}
@@ -176,17 +182,22 @@ export default function Pricing() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="relative"
+              className={`relative ${plan.popular ? 'md:-mt-4 md:mb-4' : ''}`}
             >
-              <div className="bg-black border border-gray-800 rounded-3xl p-8 h-full flex flex-col">
+              {plan.popular && (
+                <div className="absolute -top-4 inset-x-0 mx-auto w-max px-4 py-1 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white text-sm font-medium">
+                  Más popular
+                </div>
+              )}
+              <div className={`bg-gray-900 border ${plan.popular ? 'border-indigo-500/30' : 'border-gray-800'} rounded-2xl p-6 h-full flex flex-col ${plan.popular ? 'shadow-lg shadow-indigo-500/10' : ''}`}>
                 {/* Encabezado del plan */}
-                <div className="mb-8">
-                  <h3 className="text-5xl font-bold text-white mb-3">{plan.name}</h3>
-                  <p className="text-xl text-gray-300">{plan.subtitle}</p>
+                <div className="mb-6">
+                  <h3 className={`text-3xl font-bold mb-2 ${plan.popular ? 'text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400' : 'text-white'}`}>{plan.name}</h3>
+                  <p className="text-lg text-gray-300">{plan.subtitle}</p>
 
-                  <div className="w-full h-px bg-gray-800 my-8"></div>
+                  <div className="w-full h-px bg-gray-800 my-6"></div>
 
-                  <p className="text-gray-400 text-sm mb-6">{plan.commitment}</p>
+                  <p className="text-gray-400 text-xs mb-4">{plan.commitment}</p>
                 </div>
 
                 {/* Botón de acción */}
@@ -202,14 +213,16 @@ export default function Pricing() {
                       });
                     }
                   }}
-                  className="w-full border border-white/30 bg-transparent hover:bg-white/5
-                           text-white px-6 py-4 rounded-full font-medium mb-12
-                           hover:shadow-lg transition-all text-lg"
+                  className={`w-full ${plan.popular
+                    ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white'
+                    : 'border border-white/30 bg-transparent hover:bg-white/5 text-white'}
+                    px-5 py-3 rounded-full font-medium mb-8
+                    hover:shadow-lg transition-all text-base`}
                 >
                   {plan.buttonText}
                 </motion.button>
 
-                <h4 className="text-2xl font-semibold text-white mb-8">What's included:</h4>
+                <h4 className="text-lg font-semibold text-white mb-6">Qué incluye:</h4>
 
                 {/* Características del plan */}
                 <div className="flex-grow">
@@ -226,6 +239,28 @@ export default function Pricing() {
             </motion.div>
           ))}
         </div>
+
+        {/* Calendario de Cal.com */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="mb-24 max-w-5xl mx-auto"
+        >
+          <div className="text-center mb-10">
+            <h3 className="text-3xl font-bold text-white mb-4">
+              Agenda una Reunión con Nuestro Equipo
+            </h3>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+              Selecciona una fecha y hora que te convenga para discutir tus necesidades específicas
+            </p>
+          </div>
+
+          <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
+            <CalendarEmbed />
+          </div>
+        </motion.div>
 
         {/* FAQs */}
         <motion.div

@@ -12,6 +12,7 @@
   "dependencies": {
     "@astrojs/react": "3.0.7",
     "@astrojs/tailwind": "5.0.3",
+    "@calcom/embed-react": "^1.5.3",
     "astro": "4.0.7",
     "framer-motion": "^10.16.4",
     "gsap": "3.12.2",
