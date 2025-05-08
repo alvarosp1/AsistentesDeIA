@@ -1,6 +1,5 @@
 User-agent: *
 Allow: /
 
-# Sitemaps
-Sitemap: https://asistentesdeia.cl/sitemap-index.xml
+# Sitemap
 Sitemap: https://asistentesdeia.cl/sitemap.xml
