@@ -19,11 +19,19 @@ export default function Navbar() {
       return;
     }
 
-    const targetId = item === 'Planes' ? 'precios' : item.toLowerCase();
+    let targetId;
+    if (item === 'Planes') {
+      targetId = 'precios';
+    } else if (item === 'Desarrollo SAAS') {
+      targetId = 'desarrollo-saas';
+    } else {
+      targetId = item.toLowerCase();
+    }
+
     const element = document.getElementById(targetId);
     if (element) {
       const navHeight = 80; // altura aproximada del navbar
-      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
       window.scrollTo({
         top: elementPosition - navHeight,
         behavior: 'smooth'
@@ -52,10 +60,18 @@ export default function Navbar() {
           </motion.div>
 
           <div className="hidden md:flex items-center space-x-8">
-            {['Inicio', 'Servicios', 'Industrias', 'Planes'].map((item) => (
+            {['Inicio', 'Servicios', 'Industrias', 'Desarrollo SAAS', 'Planes'].map((item) => (
               <motion.a
                 key={item}
-                href={item === 'Inicio' ? '/' : item === 'Planes' ? '#precios' : `#${item.toLowerCase()}`}
+                href={
+                  item === 'Inicio'
+                    ? '/'
+                    : item === 'Planes'
+                      ? '#precios'
+                      : item === 'Desarrollo SAAS'
+                        ? '#desarrollo-saas'
+                        : `#${item.toLowerCase()}`
+                }
                 onClick={(e) => handleNavClick(e, item)}
                 className="text-gray-300 hover:text-white transition-colors"
                 whileHover={{ scale: 1.05 }}

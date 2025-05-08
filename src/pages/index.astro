@@ -8,21 +8,23 @@ import Services from '../components/react/Services';
 import Industries from '../components/react/Industries';
 import LiveDemo from '../components/LiveDemo';
 import Pricing from '../components/react/Pricing';
+import SaasDevelopment from '../components/react/SaasDevelopment';
 import SuccessStories from '../components/react/SuccessStories';
 import Footer from '../components/react/Footer';
 ---
 
-<Layout title="Asistentes de IA - Automatización Inteligente para tu Empresa">
+<Layout title="Asistentes de IA - Automatización Inteligente y Desarrollo SAAS para tu Empresa">
 	<TopBar client:load />
 	<Navbar client:load />
 	<main>
 		<Hero client:load />
-		<LiveDemo client:load />
 		<Benefits client:visible />
 		<Services client:visible />
+		<LiveDemo client:load />
+		<SaasDevelopment client:visible />
 		<Industries client:visible />
-		<Pricing client:visible />
 		<SuccessStories client:visible />
+		<Pricing client:visible />
 	</main>
 	<Footer client:visible />
 </Layout>

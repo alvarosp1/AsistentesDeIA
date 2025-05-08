@@ -357,7 +357,7 @@ export default function Footer() {
     const element = document.getElementById(target);
     if (element) {
       const navHeight = 80; // altura aproximada del navbar
-      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
       window.scrollTo({
         top: elementPosition - navHeight,
         behavior: 'smooth'
@@ -375,8 +375,9 @@ export default function Footer() {
               Asistentes de IA
             </h3>
             <p className="text-gray-300 mb-6 max-w-md">
-              Transformamos empresas con soluciones de asistentes virtuales inteligentes.
-              Automatización, eficiencia y atención 24/7 para tu negocio.
+              Somos pioneros en la integración de IA avanzada y desarrollo de software,
+              ofreciendo soluciones que no solo automatizan procesos, sino que transforman
+              modelos de negocio completos con resultados medibles y garantizados.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
@@ -417,6 +418,15 @@ export default function Footer() {
                   onClick={(e) => handleNavClick(e, 'industrias')}
                 >
                   Industrias
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#desarrollo-saas"
+                  className="text-gray-300 hover:text-white transition-colors"
+                  onClick={(e) => handleNavClick(e, 'desarrollo-saas')}
+                >
+                  Desarrollo SAAS
                 </a>
               </li>
               <li>

@@ -4,31 +4,31 @@ import CalButton from './CalButton';
 
 const comparisonData = [
   {
-    human: "Limitado a 8 horas laborales",
-    ai: "Operación continua 24/7/365",
+    human: "Limitado a 8 horas laborales con tiempos muertos",
+    ai: "Operación continua 24/7/365 sin interrupciones",
   },
   {
-    human: "Costo mínimo $800.000 mensual",
-    ai: "Inversión desde $99.990 mensual",
+    human: "Costo mínimo $800.000 mensual + beneficios",
+    ai: "Inversión desde $99.990 mensual (ahorro del 87%)",
   },
   {
-    human: "Sujeto a ausencias y rotación",
-    ai: "Disponibilidad garantizada 100%",
+    human: "Sujeto a ausencias, rotación y curva de aprendizaje",
+    ai: "Disponibilidad garantizada 100% con rendimiento constante",
   },
   {
-    human: "Requiere capacitación constante",
-    ai: "Actualizaciones automáticas",
+    human: "Requiere capacitación constante y supervisión",
+    ai: "Actualizaciones automáticas y mejora continua",
   },
   {
-    human: "Escalabilidad limitada",
-    ai: "Escalabilidad instantánea",
+    human: "Escalabilidad limitada por contrataciones",
+    ai: "Escalabilidad instantánea sin costos adicionales",
   },
 ];
 
 const pillars = [
   {
-    title: "Personas",
-    description: "¿Las personas que impulsan tu empresa tienen las habilidades necesarias para la IA?",
+    title: "Talento Aumentado",
+    description: "Potenciamos a tu equipo con IA que elimina tareas repetitivas y amplifica sus capacidades creativas y estratégicas.",
     icon: (
       <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle className="opacity-20" cx="12" cy="12" r="10" fill="currentColor"/>
@@ -37,8 +37,8 @@ const pillars = [
     ),
   },
   {
-    title: "Procesos",
-    description: "¿Tus flujos de trabajo necesitan una implementación que entregue resultados reales?",
+    title: "Procesos Optimizados",
+    description: "Transformamos flujos de trabajo ineficientes en sistemas automatizados que operan con precisión y velocidad inigualables.",
     icon: (
       <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path className="opacity-20" fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
@@ -47,8 +47,8 @@ const pillars = [
     ),
   },
   {
-    title: "Tecnología",
-    description: "¿Tu infraestructura tecnológica está lista para una implementación sostenible de IA?",
+    title: "Tecnología Escalable",
+    description: "Implementamos soluciones que crecen con tu negocio, desde asistentes de IA hasta plataformas SAAS completas y personalizadas.",
     icon: (
       <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect className="opacity-20" x="2" y="2" width="20" height="20" rx="4" fill="currentColor"/>
@@ -59,9 +59,9 @@ const pillars = [
 ];
 
 const stats = [
-  { value: "95%", label: "Satisfacción" },
-  { value: "24/7", label: "Disponibilidad" },
-  { value: "+1000", label: "Clientes" },
+  { value: "99.7%", label: "Uptime garantizado" },
+  { value: "24/7", label: "Soporte técnico" },
+  { value: "-42%", label: "Reducción de costos" },
   { value: "3.7x", label: "ROI promedio" }
 ];
 
@@ -116,7 +116,7 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="inline-block px-4 py-1.5 rounded-full bg-gradient-to-r from-purple-500/20 to-indigo-500/20 border border-purple-500/30 text-purple-300 text-sm font-medium mb-6"
             >
-              Soluciones de IA para empresas en Chile
+              Potenciamos empresas chilenas con tecnología de vanguardia
             </motion.div>
 
             <motion.h1
@@ -125,9 +125,9 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-tight"
             >
-              Implementar IA es difícil.{" "}
+              Transformamos negocios con{" "}
               <span className="bg-gradient-to-r from-purple-400 to-indigo-400 text-transparent bg-clip-text">
-                Nosotros lo hacemos fácil.
+                IA que realmente funciona.
               </span>
             </motion.h1>
 
@@ -137,7 +137,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-xl text-gray-300 mb-8 max-w-2xl"
             >
-              Con el 80% de proyectos de IA fracasando, nuestra estrategia probada ayuda a tu empresa a superar las probabilidades - evitando costosos errores y generando resultados medibles.
+              Mientras el 80% de proyectos de IA fracasan, nuestros clientes experimentan un <span className="font-semibold text-purple-300">ROI promedio de 3.7x</span>. Combinamos <span className="font-semibold text-purple-300">Asistentes de IA</span> que automatizan operaciones 24/7 con <span className="font-semibold text-indigo-300">Desarrollo de Plataformas SAAS</span> que digitalizan tu modelo de negocio completo. Resultados garantizados, sin complejidad técnica.
             </motion.p>
 
             <motion.div
@@ -150,7 +150,7 @@ export default function Hero() {
                 variant="primary"
                 size="large"
               >
-                Agenda una Consulta Gratis
+                Diagnóstico Gratuito de 30 min
               </CalButton>
               <a
                 href="#precios"
@@ -158,7 +158,7 @@ export default function Hero() {
                          text-white px-8 py-4 rounded-full text-lg font-medium
                          hover:bg-white/20 transition-all inline-flex items-center"
               >
-                Ver Planes
+                Explorar Soluciones
                 <svg className="w-5 h-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
                 </svg>
@@ -191,7 +191,7 @@ export default function Hero() {
           >
             <h3 className="text-2xl font-bold text-white mb-6 text-center">
               <span className="bg-gradient-to-r from-purple-400 to-indigo-400 text-transparent bg-clip-text">
-                Solución Tradicional vs IA Empresarial
+                ¿Por qué las empresas líderes eligen IA sobre métodos tradicionales?
               </span>
             </h3>
             <div className="space-y-5">
@@ -238,8 +238,8 @@ export default function Hero() {
               ))}
 
               <div className="mt-6 pt-4 border-t border-white/10">
-                <p className="text-center text-gray-400 text-sm">
-                  Nuestras soluciones de IA ofrecen un <span className="text-purple-400 font-medium">ROI promedio de 3.7x</span> sobre la inversión inicial
+                <p className="text-center text-gray-300 text-sm">
+                  Nuestros clientes reportan un <span className="text-purple-400 font-medium">ROI promedio de 3.7x</span> en los primeros 6 meses y una <span className="text-indigo-400 font-medium">reducción del 42%</span> en costos operativos
                 </p>
               </div>
             </div>
@@ -255,13 +255,13 @@ export default function Hero() {
         >
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
-              Nos enfocamos en 3 cosas...
+              Nuestra Metodología Triple Impacto
             </h2>
             <p className="text-xl bg-gradient-to-r from-purple-400 to-indigo-400 text-transparent bg-clip-text font-semibold">
-              Personas. Procesos. Tecnología.
+              Talento. Procesos. Tecnología.
             </p>
             <p className="text-gray-300 mt-3 max-w-2xl mx-auto">
-              Para asegurar que tu iniciativa de IA tenga éxito sin complicaciones...
+              A diferencia del 80% de proyectos de IA que fracasan, nuestro enfoque integral garantiza resultados medibles desde el primer mes
             </p>
             <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-indigo-500 mx-auto mt-4"></div>
           </div>
