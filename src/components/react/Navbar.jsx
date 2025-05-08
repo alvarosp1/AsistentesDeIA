@@ -1,5 +1,6 @@
 import { motion, useScroll } from 'framer-motion';
 import { useState, useEffect } from 'react';
+import CalButton from './CalButton';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -65,24 +66,13 @@ export default function Navbar() {
             ))}
           </div>
 
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-gradient-to-r from-purple-500 to-indigo-500
-                     text-white px-6 py-2 rounded-full text-sm font-medium
-                     hover:shadow-lg hover:shadow-purple-500/30 transition-shadow"
-            onClick={() => {
-              // @ts-ignore
-              if (window.Calendly) {
-                // @ts-ignore
-                window.Calendly.initPopupWidget({
-                  url: 'https://calendly.com/clientia/llamada-asistente-profesional-marketing'
-                });
-              }
-            }}
+          <CalButton
+            variant="primary"
+            size="small"
+            className="text-sm"
           >
             Prueba Gratis
-          </motion.button>
+          </CalButton>
         </div>
       </div>
     </motion.nav>
