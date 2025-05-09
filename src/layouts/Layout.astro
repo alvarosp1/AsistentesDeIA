@@ -41,6 +41,17 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://asistent
 		<meta property="twitter:description" content={description} />
 		<meta property="twitter:image" content="https://asistentesdeia.cl/og-image.png" />
 
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17065143653">
+		</script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'AW-17065143653');
+		</script>
+
 		<!-- Botpress Integration -->
 		<script is:inline define:vars={{ botpressToken: "P10XAEM5" }}>
 			window.addEventListener('DOMContentLoaded', (event) => {
