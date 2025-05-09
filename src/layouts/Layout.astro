@@ -52,6 +52,24 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://asistent
 		  gtag('config', 'AW-17065143653');
 		</script>
 
+		<!-- Event snippet for Reservar cita conversion page -->
+		<script>
+		function gtag_report_conversion(url) {
+		  var callback = function () {
+		    if (typeof(url) != 'undefined') {
+		      window.location = url;
+		    }
+		  };
+		  gtag('event', 'conversion', {
+		      'send_to': 'AW-17065143653/08aCCPjtycQaEOXapck_',
+		      'value': 1.0,
+		      'currency': 'CLP',
+		      'event_callback': callback
+		  });
+		  return false;
+		}
+		</script>
+
 		<!-- Botpress Integration -->
 		<script is:inline define:vars={{ botpressToken: "P10XAEM5" }}>
 			window.addEventListener('DOMContentLoaded', (event) => {
@@ -104,6 +122,18 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://asistent
 				if (window.Cal) {
 					window.Cal("init", "reunion-de-1-hora", {origin:"https://cal.com"});
 					window.Cal.ns["reunion-de-1-hora"]("ui", {"theme":"dark","hideEventTypeDetails":false,"layout":"month_view"});
+
+					// Add event listener for booking successful
+					window.Cal.ns["reunion-de-1-hora"]("on", {
+						action: "bookingSuccessful",
+						callback: (e) => {
+							console.log("Booking successful", e.detail);
+							// Report conversion to Google Ads when a booking is created
+							if (typeof window.gtag_report_conversion === 'function') {
+								window.gtag_report_conversion();
+							}
+						},
+					});
 				}
 			});
 		</script>

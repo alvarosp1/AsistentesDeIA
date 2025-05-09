@@ -1,15 +1,15 @@
 import { motion } from 'framer-motion';
 
-export default function CalButton({ 
-  children, 
-  className = "", 
-  variant = "primary", 
+export default function CalButton({
+  children,
+  className = "",
+  variant = "primary",
   size = "medium",
   onClick = null
 }) {
   // Define base styles based on variant
   let baseStyles = "";
-  
+
   if (variant === "primary") {
     baseStyles = "bg-gradient-to-r from-purple-600 to-indigo-600 text-white hover:shadow-lg hover:shadow-purple-500/30";
   } else if (variant === "secondary") {
@@ -17,7 +17,7 @@ export default function CalButton({
   } else if (variant === "white") {
     baseStyles = "bg-white text-black hover:shadow-lg hover:shadow-white/20";
   }
-  
+
   // Define size styles
   let sizeStyles = "";
   if (size === "small") {
@@ -27,7 +27,15 @@ export default function CalButton({
   } else if (size === "large") {
     sizeStyles = "px-8 py-4 text-lg";
   }
-  
+
+  // Custom click handler
+  const handleClick = (e) => {
+    // Call the original onClick if provided
+    if (onClick) {
+      onClick(e);
+    }
+  };
+
   return (
     <motion.button
       whileHover={{ scale: 1.05 }}
@@ -36,7 +44,7 @@ export default function CalButton({
       data-cal-link="asistentesdeia/reunion-de-1-hora"
       data-cal-namespace="reunion-de-1-hora"
       data-cal-config='{"layout":"month_view","theme":"dark"}'
-      onClick={onClick}
+      onClick={handleClick}
     >
       {children}
     </motion.button>
