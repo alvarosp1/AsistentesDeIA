@@ -140,7 +140,6 @@ const PrivacyPolicy = () => (
       <p>Para cualquier pregunta sobre esta política o el tratamiento de sus datos, contáctenos en:</p>
       <ul className="list-none space-y-2 mt-2">
         <li>Email: privacidad@asistentesia.com</li>
-        <li>Teléfono: +56 9 3643 2808</li>
         <li>Dirección: Av. Providencia 1234, Santiago, Chile</li>
       </ul>
     </div>
@@ -456,9 +455,6 @@ export default function Footer() {
             <ul className="space-y-2">
               <li className="text-gray-300">
                 <span className="text-purple-400">Email:</span> info@agentesia.com
-              </li>
-              <li className="text-gray-300">
-                <span className="text-purple-400">Teléfono:</span> +56 9 3643 2808
               </li>
               <li className="text-gray-300">
                 <span className="text-purple-400">Dirección:</span> Av. Providencia 1234, Santiago

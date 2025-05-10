@@ -20,17 +20,13 @@ export default function TopBar() {
               <span className="ml-4">Respuesta instantánea</span>
             </span>
           </div>
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center">
             <a href="mailto:contacto@asistentesdeia.cl" className="hover:text-purple-200 transition-colors">
               contacto@asistentesdeia.cl
-            </a>
-            <span className="text-purple-200">|</span>
-            <a href="tel:+56936432808" className="hover:text-purple-200 transition-colors">
-              +569 3643 2808
             </a>
           </div>
         </div>
       </div>
     </motion.div>
   );
-} 
+}
