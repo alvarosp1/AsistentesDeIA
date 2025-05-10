@@ -87,7 +87,7 @@ export default function Navbar() {
             size="small"
             className="text-sm"
           >
-            Prueba Gratis
+            Agendar Reunión
           </CalButton>
         </div>
       </div>

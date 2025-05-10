@@ -150,7 +150,7 @@ export default function Hero() {
                 variant="primary"
                 size="large"
               >
-                Diagnóstico Gratuito de 30 min
+                Contáctanos Ahora
               </CalButton>
               <a
                 href="#precios"
